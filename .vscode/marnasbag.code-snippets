@@ -5,7 +5,7 @@
 		"body": [
 			"local addonName = ... ---@type string",
 			"",
-			"---@class MarnasBag: AceAddon",
+			"---@class MarnasBag: AceAddon-3.0",
 			"local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)"
 		]
 	}

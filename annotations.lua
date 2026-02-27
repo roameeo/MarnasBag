@@ -63,6 +63,54 @@ function itemButton:HasItem() end
 ---@return Enum.BagIndex
 function itemButton:GetBagID() end
 
+-- ============================================================================
+-- Ace3 / LibStub (added to reduce "Undefined class" warnings)
+-- ============================================================================
+
+---@class AceAddon-3.0
+local AceAddon = {}
+
+---@param name string
+---@param ... string
+---@return table
+function AceAddon:NewAddon(name, ...) end
+
+---@param name string
+---@return table
+function AceAddon:GetAddon(name) end
+
+---@class AceDB-3.0
+local AceDB = {}
+
+---@param name string
+---@param defaults table|nil
+---@param defaultProfile any|nil
+---@return table
+function AceDB:New(name, defaults, defaultProfile) end
+
+---@class AceConsole-3.0
+local AceConsole = {}
+function AceConsole:Print(...) end
+
+---@class AceEvent-3.0
+local AceEvent = {}
+function AceEvent:RegisterEvent(eventName, method) end
+function AceEvent:UnregisterEvent(eventName) end
+
+---@class LibStub
+---@overload fun(libname: "AceAddon-3.0"): AceAddon-3.0
+---@overload fun(libname: "AceDB-3.0"): AceDB-3.0
+---@overload fun(libname: "AceConsole-3.0"): AceConsole-3.0
+---@overload fun(libname: "AceEvent-3.0"): AceEvent-3.0
+---@overload fun(libname: string): any
+LibStub = function(libname) end
+
+---@alias AceAddon AceAddon-3.0
+
+-- ============================================================================
+-- Basic UI types
+-- ============================================================================
+
 ---@class Button
 ---@field isSkinned boolean
 local Button = {}
@@ -72,8 +120,12 @@ function Button:RegisterForClicks(...) end
 ---@return Texture
 function itemButton:GetHighlightTexture() end
 
----@class ContinuableContainer 
+---@class ContinuableContainer
 ContinuableContainer = {}
+
+-- ============================================================================
+-- Masque
+-- ============================================================================
 
 ---@class MasqueGroup
 ---@field Buttons ItemButton[]
@@ -83,6 +135,7 @@ function MasqueGroup:AddButton(group, button) end
 function MasqueGroup:RemoveButton(group, button) end
 function MasqueGroup:ReSkin(boolean) end
 function MasqueGroup:RegisterCallback(func, obj) end
+
 ---@class Masque
 Masque = {}
 
@@ -91,12 +144,20 @@ Masque = {}
 ---@return MasqueGroup
 function Masque:Group(name, group) end
 
+-- ============================================================================
+-- LibWindow
+-- ============================================================================
+
 ---@class LibWindow-1.1
 Window = {}
 
 function Window.RegisterConfig(frame, config) end
 function Window.SavePosition(frame) end
 function Window.RestorePosition(frame) end
+
+-- ============================================================================
+-- Blizzard frames / globals used by the addon
+-- ============================================================================
 
 ---@class ContainerFrameCombinedBags: Frame
 ContainerFrameCombinedBags = {}
@@ -113,7 +174,6 @@ MainMenuBarBackpackButton = {}
 ---@class BagBarExpandToggle: Button
 BagBarExpandToggle = {}
 
-
 ---@class ColorPickerFrame: Frame
 ColorPickerFrame = {}
 
@@ -125,7 +185,6 @@ function ColorPickerFrame:GetColorRGB() end
 ---@return number
 function ColorPickerFrame:GetColorAlpha() end
 
-
 ---@class DropdownButton: Button
 local dropdownButton = {}
 
@@ -133,7 +192,6 @@ local dropdownButton = {}
 function dropdownButton:SetupMenu(setupFunction) end
 
 function dropdownButton:GenerateMenu() end
-
 function dropdownButton:Update() end
 
 ---@class MarnasBagDebugListButton: Button
@@ -197,6 +255,7 @@ local SearchBox = {}
 ---@field TitleContainer TitleContainer
 ---@field Owner Bag
 local MarnasBagBagPortraitTemplate = {}
+
 ---@return string
 function MarnasBagBagPortraitTemplate:GetName() end
 
@@ -396,7 +455,6 @@ _G.LE_EXPANSION_SHADOWLANDS = 8
 _G.LE_EXPANSION_DRAGONFLIGHT = 9
 _G.LE_EXPANSION_WAR_WITHIN = 10
 
--- Write out all the expansion names.
 _G.EXPANSION_NAME0 = "Classic"
 _G.EXPANSION_NAME1 = "The Burning Crusade"
 _G.EXPANSION_NAME2 = "Wrath of the Lich King"
@@ -415,7 +473,6 @@ _G.COSTS_LABEL = "Cost:"
 _G.UNIT_NAME_FONT = ""
 _G.DAMAGE_TEXT_FONT = ""
 
--- Type fixes for quality constants.
 ---@type string
 _G.ITEM_QUALITY0_DESC = _G.ITEM_QUALITY0_DESC
 ---@type string
@@ -434,12 +491,6 @@ _G.ITEM_QUALITY6_DESC = _G.ITEM_QUALITY6_DESC
 _G.ITEM_QUALITY7_DESC = _G.ITEM_QUALITY7_DESC
 ---@type string
 _G.ITEM_QUALITY8_DESC = _G.ITEM_QUALITY8_DESC
-
---Enum.BagIndex.AccountBankTab_1 = 13
---Enum.BagIndex.AccountBankTab_2 = 14
---Enum.BagIndex.AccountBankTab_3 = 15
---Enum.BagIndex.AccountBankTab_4 = 16
---Enum.BagIndex.AccountBankTab_5 = 17
 
 Enum.PlayerInteractionType.AccountBanker = 68
 
@@ -506,11 +557,8 @@ function AceItemList:SetList(values) end
 ---@field frame Frame
 
 ---@class MoneyFrameButtonTemplate
-
 ---@class DefaultPanelFlatTemplate
-
 ---@class UIPanelButtonTemplate
-
 ---@class InputBoxTemplate
 
 -- Legacy UpdateCooldown function for Classic.
@@ -539,35 +587,29 @@ ItemButtonUtil = {}
 
 ---@enum ItemContextMatchResult
 ItemButtonUtil.ItemContextMatchResult = {
-	Match = 1,
-	Mismatch = 2,
-	DoesNotApply = 3,
+  Match = 1,
+  Mismatch = 2,
+  DoesNotApply = 3,
 }
 
-----
 -- ConsolePort annotations
-----
-
 ConsolePort = {}
 
 ---@param frame Frame
 function ConsolePort:AddInterfaceCursorFrame(frame) end
 
-
---- Pawn Globals
-
--- PawnIsContainerItemAnUpgrade returns whether the item in the given bag and slot is an upgrade.
+-- Pawn Globals
 ---@param bag number
 ---@param slot number
 function PawnIsContainerItemAnUpgrade(bag, slot) end
 
-PawnVersion = _G['PawnVersion'] --[[@as number]]
-PawnGetItemData = _G['PawnGetItemData'] --[[@as fun(itemLink: string): table]]
-PawnIsItemAnUpgrade = _G['PawnIsItemAnUpgrade'] --[[@as fun(itemData: table): boolean]]
-PawnShouldItemLinkHaveUpgradeArrow = _G['PawnShouldItemLinkHaveUpgradeArrow'] --[[@as fun(itemLink: string): boolean]]
-PawnShouldItemLinkHaveUpgradeArrowUnbudgeted = _G['PawnShouldItemLinkHaveUpgradeArrowUnbudgeted'] --[[@as fun(itemLink: string, level?: boolean): boolean]]
+PawnVersion = _G["PawnVersion"] --[[@as number]]
+PawnGetItemData = _G["PawnGetItemData"] --[[@as fun(itemLink: string): table]]
+PawnIsItemAnUpgrade = _G["PawnIsItemAnUpgrade"] --[[@as fun(itemData: table): boolean]]
+PawnShouldItemLinkHaveUpgradeArrow = _G["PawnShouldItemLinkHaveUpgradeArrow"] --[[@as fun(itemLink: string): boolean]]
+PawnShouldItemLinkHaveUpgradeArrowUnbudgeted = _G["PawnShouldItemLinkHaveUpgradeArrowUnbudgeted"] --[[@as fun(itemLink: string, level?: boolean): boolean]]
 
---- SimpleItemLevel API Globals
+-- SimpleItemLevel API Globals
 ---@class SimpleItemLevel
 SimpleItemLevel = {}
 SimpleItemLevel.API = {}
@@ -576,12 +618,10 @@ SimpleItemLevel.API = {}
 ---@return boolean
 function SimpleItemLevel.API.ItemIsUpgrade(itemLink) end
 
---- SortBags
-
--- Sort bags for classic.
+-- SortBags (Classic)
 function SortBags() end
 
---- DevTool
+-- DevTool
 ---@class DevTool
 _G.DevTool = {}
 
@@ -600,8 +640,7 @@ function GetCurrencyListInfo(index) end
 ---@return number
 function GetCurrencyListSize() end
 
-
---- WagoAnalytics
+-- WagoAnalytics
 ---@class WagoAnalytics
 local WagoAnalytics = {}
 
@@ -624,10 +663,9 @@ function WagoAnalytics:DecrementCounter(counter, amount) end
 ---@param amount number
 function WagoAnalytics:SetCounter(counter, amount) end
 
-
 ---@class DecorationFrame: Frame
 
---- GuildWars2 API
+-- GuildWars2 API
 ---@class GuildWars2
 GW2_ADDON = {}
 
@@ -645,12 +683,12 @@ function Button:GwStripTextures() end
 ---@field RegisterCooldown fun(self: ElvUI, tex: Cooldown, b: string)
 ElvUI = {
   media = {
-    bordercolor = {}
+    bordercolor = {},
   },
   Media = {
     Textures = {},
-    bordercolor = {}
-  }
+    bordercolor = {},
+  },
 }
 
 ---@class ElvUISkin
