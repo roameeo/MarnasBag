@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Constants: AceModule
@@ -89,7 +89,7 @@ end
 ---@return BagButton
 function BagButtonFrame:_DoCreate()
   local b = setmetatable({}, {__index = BagButtonFrame.bagButtonProto})
-  local name = format("BetterBagsBagButton%d", buttonCount)
+  local name = format("MarnasBagBagButton%d", buttonCount)
   buttonCount = buttonCount + 1
 
   local f = CreateFrame("Button", name, nil, "ItemButtonTemplate") --[[@as Button]]

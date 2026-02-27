@@ -1,6 +1,6 @@
 # Data Module
 
-The Data module is the core data management layer of BetterBags, responsible for all item-related operations including loading, caching, searching, categorization, and refresh management. This module provides the foundation for the addon's inventory management capabilities.
+The Data module is the core data management layer of MarnasBag, responsible for all item-related operations including loading, caching, searching, categorization, and refresh management. This module provides the foundation for the addon's inventory management capabilities.
 
 ## Overview
 

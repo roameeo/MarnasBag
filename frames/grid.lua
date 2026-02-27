@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Constants: AceModule
@@ -521,7 +521,7 @@ local scrollFrameCounter = 0
 ---@param child Frame
 ---@return WowScrollBox
 function grid:CreateScrollFrame(g, parent, child)
-  local box = CreateFrame("Frame", "BetterBagsScrollGrid"..scrollFrameCounter, parent, "WowScrollBox") --[[@as WowScrollBox]]
+  local box = CreateFrame("Frame", "MarnasBagScrollGrid"..scrollFrameCounter, parent, "WowScrollBox") --[[@as WowScrollBox]]
   box:SetAllPoints(parent)
   box:SetInterpolateScroll(true)
   local bar = CreateFrame("EventFrame", nil, box, "MinimalScrollBar")

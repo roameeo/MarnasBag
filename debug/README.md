@@ -1,6 +1,6 @@
 # Debug Module
 
-The Debug module provides comprehensive debugging, profiling, and diagnostic tools for BetterBags development and troubleshooting. It includes logging, performance profiling, frame debugging, item inspection, and analytics integration.
+The Debug module provides comprehensive debugging, profiling, and diagnostic tools for MarnasBag development and troubleshooting. It includes logging, performance profiling, frame debugging, item inspection, and analytics integration.
 
 ## Overview
 

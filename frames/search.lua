@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Animations: AceModule
@@ -43,10 +43,10 @@ local searchBox = addon:NewModule('SearchBox')
 ---@field helpTextFadeOut AnimationGroup
 searchBox.searchProto = {}
 
--- BetterBags_ToggleSearch toggles the search view. This function is used in the
+-- MarnasBag_ToggleSearch toggles the search view. This function is used in the
 -- search key bind.
-function BetterBags_ToggleSearch()
-  local ctx = context:New('BetterBags_ToggleSearch')
+function MarnasBag_ToggleSearch()
+  local ctx = context:New('MarnasBag_ToggleSearch')
   searchBox.searchFrame:Toggle(ctx)
 end
 
@@ -168,7 +168,7 @@ end
 ---@return SearchFrame
 function searchBox:Create(ctx, parent)
   local sf = setmetatable({}, {__index = searchBox.searchProto})
-  local f = CreateFrame("Frame", "BetterBagsSearchFrame", UIParent, "BetterBagsSearchPanelTemplate") --[[@as Frame]]
+  local f = CreateFrame("Frame", "MarnasBagSearchFrame", UIParent, "MarnasBagSearchPanelTemplate") --[[@as Frame]]
   f:SetSize(400, 75)
   f:SetPoint("BOTTOM", parent, "TOP", 0, 10)
   f:SetFrameStrata("HIGH")
@@ -217,7 +217,7 @@ function searchBox:Create(ctx, parent)
     end
   end)
 
-  local helpText = textBox:CreateFontString("BetterBagsSearchHelpText", "ARTWORK", "GameFontDisableLarge")
+  local helpText = textBox:CreateFontString("MarnasBagSearchHelpText", "ARTWORK", "GameFontDisableLarge")
   helpText:SetPoint("CENTER", textBox, "CENTER", 0, 0)
   helpText:SetText("Start typing to search your bags...")
   helpText:Show()

@@ -1,4 +1,4 @@
-package-as: BetterBags
+package-as: MarnasBag
 
 externals:
   libs/LibStub: https://repos.wowace.com/wow/libstub/tags/1.0

@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 ---@field backpackShouldOpen boolean
 ---@field backpackShouldClose boolean
 ---@field atInteracting boolean

@@ -1,6 +1,6 @@
-# BetterBags Utilities Module
+# MarnasBag Utilities Module
 
-The utilities module provides essential helper functions, data structures, and algorithms that support various aspects of the BetterBags addon functionality.
+The utilities module provides essential helper functions, data structures, and algorithms that support various aspects of the MarnasBag addon functionality.
 
 ## Table of Contents
 

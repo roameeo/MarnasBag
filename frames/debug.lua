@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Events: AceModule
@@ -29,7 +29,7 @@ local itemBrowser = addon:GetModule('ItemBrowser')
 local debugWindow = addon:NewModule('DebugWindow')
 
 
----@param button BetterBagsDebugListButton
+---@param button MarnasBagDebugListButton
 ---@param elementData table
 local function initDebugListItem(button, elementData)
   button.RowNumber:SetText(format("%s", elementData.row))
@@ -44,7 +44,7 @@ function debugWindow:Create(ctx)
   self.cells = {}
   self.rows = 0
   self.provider = CreateDataProvider()
-  self.frame = CreateFrame("Frame", "BetterBagsDebugWindow", UIParent, "DefaultPanelFlatTemplate") --[[@as Frame]]
+  self.frame = CreateFrame("Frame", "MarnasBagDebugWindow", UIParent, "DefaultPanelFlatTemplate") --[[@as Frame]]
   self.frame:SetPoint("CENTER")
   self.frame:SetSize(800, 600)
   self.frame:SetMovable(true)
@@ -52,7 +52,7 @@ function debugWindow:Create(ctx)
   self.frame:RegisterForDrag("LeftButton")
   self.frame:SetScript("OnDragStart", self.frame.StartMoving)
   self.frame:SetScript("OnDragStop", self.frame.StopMovingOrSizing)
-  self.frame:SetTitle("BetterBags Debug Window")
+  self.frame:SetTitle("MarnasBag Debug Window")
 
   -- Create tab frame
   self.tabFrame = tabs:Create(self.frame)
@@ -144,7 +144,7 @@ function debugWindow:CreateDebugLogFrame()
   local frame = list:Create(self.frame)
   frame.frame:SetPoint("TOPLEFT", self.frame, "TOPLEFT", 5, -25)
   frame.frame:SetPoint("BOTTOMRIGHT", self.frame, "BOTTOMRIGHT", -5, 5)
-  frame:SetupDataSource("BetterBagsDebugListButton", initDebugListItem, function()end)
+  frame:SetupDataSource("MarnasBagDebugListButton", initDebugListItem, function()end)
   return frame
 end
 

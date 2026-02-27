@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Themes: AceModule
@@ -43,7 +43,7 @@ local tabs = {}
 ---@type Theme
 local theme = {
   Name = 'ElvUI',
-  Description = "An ElvUI Theme for BetterBags",
+  Description = "An ElvUI Theme for MarnasBag",
   Available = ElvUI and true or false,
   DisableMasque = true,
   Portrait = function (frame)

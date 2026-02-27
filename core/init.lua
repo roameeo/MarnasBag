@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field,deprecated
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 ---@field _buttons CheckButton[]|MainMenuBagButton[]
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 ---@cast addon +AceHook-3.0
@@ -95,9 +95,9 @@ addon.Bags = {}
 addon.atBank = false
 addon.atWarbank = false
 
--- BetterBags_ToggleBags is a wrapper function for the ToggleAllBags function.
-function BetterBags_ToggleBags()
-  local ctx = context:New('BetterBags_ToggleBags')
+-- MarnasBag_ToggleBags is a wrapper function for the ToggleAllBags function.
+function MarnasBag_ToggleBags()
+  local ctx = context:New('MarnasBag_ToggleBags')
   addon:ToggleAllBags(ctx)
 end
 
@@ -120,10 +120,10 @@ local function CheckKeyBindings()
   for _, binding in pairs(bindings) do
     local key, otherkey = GetBindingKey(binding)
     if key ~= nil then
-      SetOverrideBinding(addon._bindingFrame, true, key, "BETTERBAGS_TOGGLEBAGS")
+      SetOverrideBinding(addon._bindingFrame, true, key, "MARNASBAG_TOGGLEBAGS")
     end
     if otherkey ~= nil then
-      SetOverrideBinding(addon._bindingFrame, true, otherkey, "BETTERBAGS_TOGGLEBAGS")
+      SetOverrideBinding(addon._bindingFrame, true, otherkey, "MARNASBAG_TOGGLEBAGS")
     end
   end
 end
@@ -190,7 +190,7 @@ end
 
 -- HideBlizzardBags will hide the default Blizzard bag frames.
 function addon:HideBlizzardBags()
-  local sneakyFrame = CreateFrame("Frame", "BetterBagsSneakyFrame")
+  local sneakyFrame = CreateFrame("Frame", "MarnasBagSneakyFrame")
   sneakyFrame:Hide()
   ContainerFrameCombinedBags:SetParent(sneakyFrame)
   local maxBags = addon.isRetail and 6 or 13
@@ -243,9 +243,9 @@ end
 
 local function applyCompat()
   C_Timer.After(5, function()
-    if C_AddOns.IsAddOnLoaded("BetterBagsElvUISkin") then
-      question:Alert("Disable ElvUI Plugin", "The ElvUI BetterBags plugin you have installed is not compatible with BetterBags. It has been disabled -- please reload your UI to apply the changes.")
-      C_AddOns.DisableAddOn("BetterBagsElvUISkin")
+    if C_AddOns.IsAddOnLoaded("MarnasBagElvUISkin") then
+      question:Alert("Disable ElvUI Plugin", "The ElvUI MarnasBag plugin you have installed is not compatible with MarnasBag. It has been disabled -- please reload your UI to apply the changes.")
+      C_AddOns.DisableAddOn("MarnasBagElvUISkin")
     end
   end)
 end
@@ -342,7 +342,7 @@ function addon:OnEnable()
   --This tutorial bitfield change does not persist when set in OnInitialize()
   if addon.isRetail then
     -- Disable the mount equipment tutorial as it triggers a taint error from micromenu flashing.
-    -- BetterBags blamed because of ContainerFrameItemButtonTemplate hooking by Tutorials
+    -- MarnasBag blamed because of ContainerFrameItemButtonTemplate hooking by Tutorials
     -- https://github.com/Stanzilla/WoWUIBugs/issues/434
     C_CVar.SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_MOUNT_EQUIPMENT_SLOT_FRAME --[[@as number]], true)
     -- Disable the reagent bag tutorial, as Better Bags does not match

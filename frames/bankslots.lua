@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 -- Create the bank slots module.
@@ -364,7 +364,7 @@ function BankSlots:CreatePanel(ctx, bagFrame)
   setmetatable(b, {__index = BankSlots.bankSlotsPanelProto})
 
   ---@class Frame: BackdropTemplate
-  local f = CreateFrame("Frame", "BetterBagsBankSlots", bagFrame)
+  local f = CreateFrame("Frame", "MarnasBagBankSlots", bagFrame)
   b.frame = f
   b.bagFrame = bagFrame
 
@@ -424,7 +424,7 @@ function BankSlots:CreatePanel(ctx, bagFrame)
     -- View button: plain Button shown when the slot is purchased.
     -- Handles left-click (select tab) and right-click (open tab config).
     buttonCount = buttonCount + 1
-    local viewButton = CreateFrame("Button", format("BetterBagsBankSlotButton%d", buttonCount), container)
+    local viewButton = CreateFrame("Button", format("MarnasBagBankSlotButton%d", buttonCount), container)
     viewButton:SetAllPoints()
     viewButton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
     viewButton:Hide()
@@ -435,7 +435,7 @@ function BankSlots:CreatePanel(ctx, bagFrame)
     -- opens the Blizzard bank tab purchase dialog. The overrideBankType attribute
     -- tells the mixin whether to purchase a Character or Account bank tab.
     buttonCount = buttonCount + 1
-    local purchaseButton = CreateFrame("Button", format("BetterBagsBankSlotButton%d", buttonCount), container, "BankPanelPurchaseButtonScriptTemplate")
+    local purchaseButton = CreateFrame("Button", format("MarnasBagBankSlotButton%d", buttonCount), container, "BankPanelPurchaseButtonScriptTemplate")
     purchaseButton:SetAllPoints()
     if slotInfo.bankType == Enum.BankType.Character then
       purchaseButton:SetAttribute("overrideBankType", Enum.BankType.Character)

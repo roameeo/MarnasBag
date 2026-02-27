@@ -1,6 +1,6 @@
-# BetterBags Themes Module
+# MarnasBag Themes Module
 
-The themes module provides a comprehensive theming system for BetterBags, allowing users to customize the visual appearance of their bag interface with different styles and integrations.
+The themes module provides a comprehensive theming system for MarnasBag, allowing users to customize the visual appearance of their bag interface with different styles and integrations.
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ The themes module provides a comprehensive theming system for BetterBags, allowi
 
 ## Overview
 
-The themes module manages the visual appearance of all BetterBags windows, including:
+The themes module manages the visual appearance of all MarnasBag windows, including:
 - Main bag and bank windows (Portrait frames)
 - Configuration panels (Simple frames)
 - Modal dialogs (Flat frames)

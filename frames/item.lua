@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub("AceAddon-3.0"):GetAddon(addonName)
 
 ---@class Constants: AceModule
@@ -721,7 +721,7 @@ function itemFrame:OnInitialize()
 end
 
 function itemFrame:OnEnable()
-	self.emptyItemTooltip = CreateFrame("GameTooltip", "BetterBagsEmptySlotTooltip", UIParent, "GameTooltipTemplate") --[[@as GameTooltip]]
+	self.emptyItemTooltip = CreateFrame("GameTooltip", "MarnasBagEmptySlotTooltip", UIParent, "GameTooltipTemplate") --[[@as GameTooltip]]
 	self.emptyItemTooltip:SetScale(GameTooltip:GetScale())
 
 	events:RegisterMessage("itemLevel/MaxChanged", function()
@@ -765,7 +765,7 @@ function itemFrame:_DoCreate(_)
 
 	-- Generate the item button name. This is needed because item
 	-- button textures are named after the button itself.
-	local name = format("BetterBagsItemButton%d", buttonCount)
+	local name = format("MarnasBagItemButton%d", buttonCount)
 	buttonCount = buttonCount + 1
 	-- Create a hidden parent to the ItemButton frame to work around
 	-- item taint introduced in 10.x

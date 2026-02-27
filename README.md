@@ -1,23 +1,23 @@
 <div align="center" style="text-align:center">
 
-# BetterBags
-[![Discord BetterBags](https://discordapp.com/api/guilds/1063213796845428876/widget.png?style=banner2)](https://discord.gg/a6DQuK8hV7)
+# MarnasBag
+[![Discord MarnasBag](https://discordapp.com/api/guilds/1063213796845428876/widget.png?style=banner2)](https://discord.gg/a6DQuK8hV7)
 
-[![CurseForge BetterBags](https://img.shields.io/badge/CurseForge-BetterBags-F16436.svg?style=flat)](https://www.curseforge.com/wow/addons/better-bags)
-[![Wago BetterBags](https://img.shields.io/badge/Wago-BetterBags-C1272D.svg?style=flat)](https://addons.wago.io/addons/betterbags/versions?stability=stable)
-[![Package and release](https://github.com/Cidan/BetterBags/actions/workflows/release.yml/badge.svg)](https://github.com/Cidan/BetterBags/actions/workflows/release.yml)
+[![CurseForge MarnasBag](https://img.shields.io/badge/CurseForge-MarnasBag-F16436.svg?style=flat)](https://www.curseforge.com/wow/addons/better-bags)
+[![Wago MarnasBag](https://img.shields.io/badge/Wago-MarnasBag-C1272D.svg?style=flat)](https://addons.wago.io/addons/marnasbag/versions?stability=stable)
+[![Package and release](https://github.com/Cidan/MarnasBag/actions/workflows/release.yml/badge.svg)](https://github.com/Cidan/MarnasBag/actions/workflows/release.yml)
 
 
-<img src="https://i.imgur.com/AyITAAV.png" alt="BetterBags Logo">
+<img src="https://i.imgur.com/AyITAAV.png" alt="MarnasBag Logo">
 
-BetterBags is a bag replacement addon for World of Warcraft, inspired by AdiBags.  
+MarnasBag is a bag replacement addon for World of Warcraft, inspired by AdiBags.  
 It has a fresh, clean look, updated to the 2026 World of Warcraft art style.
 
 It currently includes most of the features of AdiBags and is being worked on daily.  
 One of the last major features currently missing is user selectable themes.  
 If you have any feedback, please let us know in the [Discord](https://discord.gg/a6DQuK8hV7).
 
-BetterBags currently supports the following versions of World of Warcraft:  
+MarnasBag currently supports the following versions of World of Warcraft:  
 Retail (including Midnight and the various WoW: Remix versions as they come out)  
 Classic (Era, MoP Classic, SoD, BC Anniversary, etc.)  
 </div>
@@ -81,7 +81,7 @@ More additions are being added all the time.
 # Features
 
 ## Bag & Bank View
-BetterBags offers its users a powerful category-based view, which also carry over to the bank.  
+MarnasBag offers its users a powerful category-based view, which also carry over to the bank.  
 
 ### Section Grid
 This view sorts your inventory into their own visually distinct categories, allowing you to categorize items at a basic level that is easier for humans to understand by grouping like items together. 
@@ -100,7 +100,7 @@ The Section Grid offers:
 </div>
 
 ### Navigation
-Most options and other important information in BetterBags can be reached by left-clicking on the bag button in the top-left corner of the bag (or bank) and bringing up the menu. Hovering over the bag icon will bring up a list of mouse-clicks that can be done for various functions. Some of the important functions in the menu are described in the following sections. Any options not in the menu directly are instead in the options screen (access by choosing `Open Options Screen` in the menu or the slash command `/bb`).
+Most options and other important information in MarnasBag can be reached by left-clicking on the bag button in the top-left corner of the bag (or bank) and bringing up the menu. Hovering over the bag icon will bring up a list of mouse-clicks that can be done for various functions. Some of the important functions in the menu are described in the following sections. Any options not in the menu directly are instead in the options screen (access by choosing `Open Options Screen` in the menu or the slash command `/bb`).
 
 <div align="center" style="text-align:center">
 <a href="https://i.imgur.com/jpMjAcP.png" target="_blank"><img src="https://i.imgur.com/jpMjAcP.png" alt="Menu in Retail."></a>
@@ -279,10 +279,10 @@ If you don't want to use groups, you can turn it off in the settings.
 
 ## Bank
 ### Bank Tabs
-BetterBags displays the different types of bank as tabs along the bottom of the bank window. It also includes the option to purchase the Reagent Bank and any available Warband Bank tabs.  
+MarnasBag displays the different types of bank as tabs along the bottom of the bank window. It also includes the option to purchase the Reagent Bank and any available Warband Bank tabs.  
 Tabs include:
 - Bank (Showing all base bank tabs as well as bank bags for older versions).
-- Warband Bank Tabs 1-5 (Called `Warbank Tab` in BetterBags).
+- Warband Bank Tabs 1-5 (Called `Warbank Tab` in MarnasBag).
 
 <div align="center" style="text-align:center">
 <a href="https://i.imgur.com/sxbCWNT.png" target="_blank"><img src="https://i.imgur.com/sxbCWNT.png" alt="Bank Tabs in Retail."></a>
@@ -332,7 +332,7 @@ To deposit or withdraw gold from the Warbank, hover over the gold amount at the 
 </div>
 
 ## Recent Items
-BetterBags places items that have been flagged as new by the WoW client in a special category at the top of your bag so that you can quickly find these looted items.  
+MarnasBag places items that have been flagged as new by the WoW client in a special category at the top of your bag so that you can quickly find these looted items.  
 **Note: To clear recent items manually, right-click the bag icon. On Cataclysm and Classic, you must install the [SortBags Addon](https://www.curseforge.com/wow/addons/sortbags) to manually clear recent items.**
 
 These can be further fine-tuned by:
@@ -359,7 +359,7 @@ Supported windows include bags, all bank tabs, the mailbox, the trade window, an
 </div>
 
 ## Search
-BetterBags offers a comprehensive Search option that can be toggled with a keybinding (`BetterBags > Search Bags`).
+MarnasBag offers a comprehensive Search option that can be toggled with a keybinding (`MarnasBag > Search Bags`).
 
 When searching for bare words (eg. "Signet"), the search will match any item that has the word in the entire text of the default indices, which includes `name`, `type`, `subtype`, `category`, `equipmentLocation`, and `binding`. When searching in an index (eg. "name = Signet"), using the `=` operator will search in a prefix style, meaning the things you are searching for must start with what you type. To support full-text searching of each field, use the `%=` operator.  
 If you would like to exclude items in gear sets from your searches, the easiest way to do so is add `and not category = "gear:"` to the end of your search. (eg. `slot = finger or slot = neck and not (category = 'gear:')` will highlight all rings and necklaces that are NOT part of a gear set)
@@ -375,7 +375,7 @@ Search allows you to find items by the following indices (based on the item belo
 - `name` (name = "Tome of Unstable Power") The name of the item; the first line in the tooltip.
 - `type` (type = Armor) The type of the item. Some examples include Armor, Weapon, Consumable, and Reagent.
 - `subtype` (subtype = Miscellaneous) The subtype of the item. Some examples include Leather, Potion, Bag, and Bows. See the [Warcraft Wiki](https://warcraft.wiki.gg/wiki/ItemType) for more information regarding type and subtype.
-- `category` (category = "Gear: MW DPS") The category that the item is sorted into in BetterBags.
+- `category` (category = "Gear: MW DPS") The category that the item is sorted into in MarnasBag.
 - `equipmentLocation` or `slot` (slot = Trinket) The item slot that the gear is for. Examples include Head, Legs, Main-Hand, and Finger.
 - `expansion` or `exp` (expansion = DF) The expansion that the item is originally from. Shorthands are: Classic, BC, WotLK, Cata, MoP, WoD, Legion, BfA, SL, DF, TWW, Mid.
 - `equipmentSet` (equipmentSet = "MW DPS") The equipment set(s) that a piece of gear is part of.
@@ -395,7 +395,7 @@ Search allows you to find items by the following indices (based on the item belo
 
 ### Booleans
 - `reagent` (reagent = false) Is the item classified as a reagent?
-- `bound` (bound = true) Is the item bound to the character or warband? (From BetterBags internal module)
+- `bound` (bound = true) Is the item bound to the character or warband? (From MarnasBag internal module)
 - `isbound` (isbound = true) Is the item bound to the character or account? (From Blizzard C_Item)
 - `quest` (quest = false) Is the item for a non-active quest?
 - `activeQuest` (activeQuest = false) Is the item for an active quest?
@@ -423,7 +423,7 @@ Search allows you to find items by the following indices (based on the item belo
 *Complex Search in Retail.*
 </div>
 
-BetterBags also allows you to turn on a search bar near the top of the bag instead of the floating search box.
+MarnasBag also allows you to turn on a search bar near the top of the bag instead of the floating search box.
 
 <div align="center" style="text-align:center">
 <a href="https://i.imgur.com/S0W5Gmw.png" target="_blank"><img src="https://i.imgur.com/S0W5Gmw.png" alt="In-Bag Search Bar in Retail."></a>
@@ -432,7 +432,7 @@ BetterBags also allows you to turn on a search bar near the top of the bag inste
 </div>
 
 ## Custom Categories
-BetterBags allows items to be grouped into custom categories. These categories can be manually populated by the user, created by plugins, or created from a search.  
+MarnasBag allows items to be grouped into custom categories. These categories can be manually populated by the user, created by plugins, or created from a search.  
 The title colour of the category can be chosen. Make a beautiful rainbow with all your categories!
 
 ### Manual Custom Categories
@@ -498,13 +498,13 @@ To create a Search Category, type in a search, then press `Enter`. Fill out the 
 </table>
 
 ## Themes
-BetterBags offers a few built-in themes and an API to allow addon authors to create their own themes.  
-BetterBags will detect if you have ElvUI or GW2 UI installed and offer an addon specific theme.
+MarnasBag offers a few built-in themes and an API to allow addon authors to create their own themes.  
+MarnasBag will detect if you have ElvUI or GW2 UI installed and offer an addon specific theme.
 
 <table>
 	<tr>
 		<td align="middle">
-			<a href="https://i.imgur.com/P2clwi6.png" target="_blank"><img src="https://i.imgur.com/P2clwi6.png" alt="Simple Dark Theme in Retail (with additional theme options from BetterBags - Themes)."></a></td>
+			<a href="https://i.imgur.com/P2clwi6.png" target="_blank"><img src="https://i.imgur.com/P2clwi6.png" alt="Simple Dark Theme in Retail (with additional theme options from MarnasBag - Themes)."></a></td>
 		</td>
 		<td align="middle">
 			<a href="https://i.imgur.com/pddxrSV.png" target="_blank"><img src="https://i.imgur.com/pddxrSV.png" alt="GW2 UI Theme in Retail."></a></td>
@@ -512,7 +512,7 @@ BetterBags will detect if you have ElvUI or GW2 UI installed and offer an addon 
 	</tr>
 	<tr>
 		<td align="middle">
-			Simple Dark Theme in Retail (with additional theme options from <a href="https://www.curseforge.com/wow/addons/betterbags-themes">BetterBags - Themes</a>).
+			Simple Dark Theme in Retail (with additional theme options from <a href="https://www.curseforge.com/wow/addons/marnasbag-themes">MarnasBag - Themes</a>).
 		</td>
 		<td align="middle">
 			GW2 UI Theme in Retail.
@@ -521,7 +521,7 @@ BetterBags will detect if you have ElvUI or GW2 UI installed and offer an addon 
 </table>
 
 ## Profiles
-BetterBags allows you to set up profiles per character. By default, all characters will use the "Default" profile.  
+MarnasBag allows you to set up profiles per character. By default, all characters will use the "Default" profile.  
 Profiles will save all settings, including categories, anchor, theme, etc.
 
 <div align="center" style="text-align:center">
@@ -531,7 +531,7 @@ Profiles will save all settings, including categories, anchor, theme, etc.
 </div>
 
 ## Import/Export
-BetterBags supports import and export strings to easily share your category settings with other users.  
+MarnasBag supports import and export strings to easily share your category settings with other users.  
 Import and Export strings only contain category information. Set your own style for the bags, then import the best category setup!
 
 <table>
@@ -554,7 +554,7 @@ Import and Export strings only contain category information. Set your own style 
 </table>
 
 ## Plugin System
-BetterBags has a robust plugin system that allows developers to write custom categories.
+MarnasBag has a robust plugin system that allows developers to write custom categories.
 
 Plugins have the following options:
 - Custom Category API, to create new categories through the plugin.
@@ -563,14 +563,14 @@ Plugins have the following options:
 - Localization module, which allows the plugin author to localize their text.
 
 <div align="center" style="text-align:center">
-<a href="https://i.imgur.com/XgGTR18.png" target="_blank"><img src="https://i.imgur.com/XgGTR18.png" alt="Plugin System (BetterBags - Appearances) in Retail"></a>
+<a href="https://i.imgur.com/XgGTR18.png" target="_blank"><img src="https://i.imgur.com/XgGTR18.png" alt="Plugin System (MarnasBag - Appearances) in Retail"></a>
 
-*Plugin System (<a href="https://www.curseforge.com/wow/addons/betterbags-appearances">BetterBags - Appearances</a>) in Retail.*
+*Plugin System (<a href="https://www.curseforge.com/wow/addons/marnasbag-appearances">MarnasBag - Appearances</a>) in Retail.*
 </div>
 
 # Upcoming Updates
-BetterBags is constantly getting new features and updates.  
-Github hosts both our [Progress Board](https://github.com/users/Cidan/projects/2) and means to [report bugs and request new features](https://github.com/Cidan/BetterBags/issues/new/choose).
+MarnasBag is constantly getting new features and updates.  
+Github hosts both our [Progress Board](https://github.com/users/Cidan/projects/2) and means to [report bugs and request new features](https://github.com/Cidan/MarnasBag/issues/new/choose).
 
 The following features are under active development:
 - Virtual Bank Groups, just like Category Groups in Bags!

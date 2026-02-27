@@ -1,10 +1,10 @@
 # Core Module
 
-This folder contains the core systems and foundational modules that power the BetterBags addon. These modules provide essential functionality including event handling, data management, UI hooks, and cross-version compatibility.
+This folder contains the core systems and foundational modules that power the MarnasBag addon. These modules provide essential functionality including event handling, data management, UI hooks, and cross-version compatibility.
 
 ## Overview
 
-The core module provides the fundamental infrastructure for BetterBags, including initialization, event management, database operations, and system-wide utilities. It serves as the backbone that all other modules depend on.
+The core module provides the fundamental infrastructure for MarnasBag, including initialization, event management, database operations, and system-wide utilities. It serves as the backbone that all other modules depend on.
 
 ## Files
 
@@ -28,7 +28,7 @@ Provides asynchronous execution capabilities using coroutines to prevent UI free
 
 Handles the initial bootstrapping of the addon and creates the root module.
 
-- Creates the main BetterBags addon using AceAddon-3.0
+- Creates the main MarnasBag addon using AceAddon-3.0
 - Sets default module state to disabled
 - Defines keybinding names for bag toggle and search
 
@@ -112,7 +112,7 @@ Main initialization module that coordinates addon startup.
 
 #### Key Responsibilities
 
-- Disables tutorial screens incompatible with BetterBags
+- Disables tutorial screens incompatible with MarnasBag
 - Sets up keybinding overrides
 - Creates main bag instances (Backpack and Bank)
 - Initializes all submodules in correct order

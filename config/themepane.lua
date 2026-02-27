@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class List: AceModule
@@ -335,7 +335,7 @@ function themePane:Create(parent)
   pane.listFrame.frame:SetPoint("TOPLEFT", 0, 0)
   pane.listFrame.frame:SetPoint("BOTTOMRIGHT", 0, 0)
 
-  pane.listFrame:SetupDataSource("BetterBagsPlainTextListButton", function(f, data)
+  pane.listFrame:SetupDataSource("MarnasBagPlainTextListButton", function(f, data)
     ---@cast f ThemePaneListButton
     pane:initListItem(f, data)
   end, function(f, data)

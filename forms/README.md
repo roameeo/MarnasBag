@@ -170,7 +170,7 @@ local db = addon:GetModule('Database')
 
 -- Create form
 local settingsForm = form:Create({
-  title = "BetterBags Settings",
+  title = "MarnasBag Settings",
   layout = const.FORM_LAYOUT.STACKED,
   index = true
 })

@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Events: AceModule
@@ -43,5 +43,5 @@ end
 function simpleItemLevel:OnEnable()
   if not SimpleItemLevel then return end
   events:RegisterMessage('bag/Rendered', onBagRendered)
-  print("BetterBags: SimpleItemLevel integration enabled.")
+  print("MarnasBag: SimpleItemLevel integration enabled.")
 end

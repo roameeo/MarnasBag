@@ -1,12 +1,12 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 ---@cast addon +AceHook-3.0
 
 function addon:HideBlizzardBags()
-  local sneakyFrame = CreateFrame("Frame", "BetterBagsSneakyFrame")
+  local sneakyFrame = CreateFrame("Frame", "MarnasBagSneakyFrame")
   sneakyFrame:Hide()
 
   for i = 1, 13 do

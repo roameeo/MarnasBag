@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Animations: AceModule
@@ -21,7 +21,7 @@ local fonts = addon:GetModule('Fonts')
 ---@class ThemeConfig: AceModule
 local themeConfig = addon:NewModule('ThemeConfig')
 
----@class BetterBagsPlainTextListButton: Button
+---@class MarnasBagPlainTextListButton: Button
 
 ---@class (exact) ThemeConfigFrame
 ---@field frame Frame
@@ -30,7 +30,7 @@ local themeConfig = addon:NewModule('ThemeConfig')
 ---@field package fadeOut AnimationGroup
 local themeConfigFrame = {}
 
----@param f BetterBagsPlainTextListButton
+---@param f MarnasBagPlainTextListButton
 ---@param data table
 function themeConfigFrame:initThemeItem(f, data)
   f:SetHeight(30)
@@ -41,7 +41,7 @@ function themeConfigFrame:initThemeItem(f, data)
   end)
 end
 
----@param f BetterBagsPlainTextListButton
+---@param f MarnasBagPlainTextListButton
 ---@param data table
 function themeConfigFrame:resetThemeItem(f, data)
   local _ = data
@@ -96,12 +96,12 @@ function themeConfig:Create(parent)
   tc.content = list:Create(tc.frame)
   tc.content.frame:SetAllPoints()
 
-  tc.content:SetupDataSource("BetterBagsPlainTextListButton", function(f, data)
-    ---@cast f BetterBagsPlainTextListButton
+  tc.content:SetupDataSource("MarnasBagPlainTextListButton", function(f, data)
+    ---@cast f MarnasBagPlainTextListButton
     tc:initThemeItem(f, data)
   end,
   function(f, data)
-    ---@cast f BetterBagsPlainTextListButton
+    ---@cast f MarnasBagPlainTextListButton
     tc:resetThemeItem(f, data)
   end)
 

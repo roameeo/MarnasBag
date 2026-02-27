@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Constants: AceModule
@@ -335,7 +335,7 @@ end
 ---@param tab TabButton
 ---@return PanelTabButtonTemplate
 function themes.CreateDefaultTabDecoration(tab)
-  local decoration = CreateFrame("button", tab:GetName() .. "default", tab, "BetterBagsSecureBagTabTemplate") --[[@as PanelTabButtonTemplate]]
+  local decoration = CreateFrame("button", tab:GetName() .. "default", tab, "MarnasBagSecureBagTabTemplate") --[[@as PanelTabButtonTemplate]]
   if tab.sabtClick then
     decoration:SetAttribute("type", "click")
     decoration:SetAttribute("clickbutton", tab.sabtClick)
@@ -408,7 +408,7 @@ function themes.SetupBagButton(bag, decoration)
   bagButton.portrait:SetPoint("CENTER", bagButton, "CENTER", 0, 0)
   bagButton.portrait:SetDrawLayer("OVERLAY", 7)
 
-  bagButton.highlightTex = bagButton:CreateTexture("BetterBagsBagButtonTextureHighlight", "BACKGROUND")
+  bagButton.highlightTex = bagButton:CreateTexture("MarnasBagBagButtonTextureHighlight", "BACKGROUND")
   bagButton.highlightTex:SetTexture([[Interface\Containerframe\Bagslots2x]])
   bagButton.highlightTex:SetSize(portraitSize, portraitSize * 1.25)
   bagButton.highlightTex:SetTexCoord(0.2, 0.3992, 0, 1)
@@ -416,7 +416,7 @@ function themes.SetupBagButton(bag, decoration)
   bagButton.highlightTex:SetAlpha(0)
   bagButton.highlightTex:SetDrawLayer("OVERLAY", 7)
 
-  local anig = bagButton.highlightTex:CreateAnimationGroup("BetterBagsBagButtonTextureHighlightAnim")
+  local anig = bagButton.highlightTex:CreateAnimationGroup("MarnasBagBagButtonTextureHighlightAnim")
   local ani = anig:CreateAnimation("Alpha")
   ani:SetFromAlpha(0)
   ani:SetToAlpha(1)
@@ -480,7 +480,7 @@ function themes.SetupBagButton(bag, decoration)
         anig:Restart()
       end
       if IsShiftKeyDown() then
-        BetterBags_ToggleSearch()
+        MarnasBag_ToggleSearch()
       elseif CursorHasItem() and GetCursorInfo() == "item" then
         bag:CreateCategoryForItemInCursor(ctx)
       else

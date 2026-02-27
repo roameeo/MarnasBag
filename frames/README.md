@@ -1,6 +1,6 @@
-# BetterBags Frames Module
+# MarnasBag Frames Module
 
-The frames module contains all UI frame components for the BetterBags addon, providing the visual interface for bag management, item display, and user interaction.
+The frames module contains all UI frame components for the MarnasBag addon, providing the visual interface for bag management, item display, and user interaction.
 
 ## Table of Contents
 
@@ -203,7 +203,7 @@ Search interface for filtering items.
 - Integrated search box
 
 **Key Functions:**
-- `BetterBags_ToggleSearch()` - Toggle search overlay
+- `MarnasBag_ToggleSearch()` - Toggle search overlay
 - `UpdateSearch(ctx)` - Update search results
 - `Create(ctx, parent)` - Create search frame
 
@@ -345,7 +345,7 @@ After the fade-out animation completes (`fadeOutGroup.OnFinished`):
 
 `OpenTabConfig` uses two internal helpers to work around timing and reparenting issues with Blizzard's `TabSettingsMenu`:
 
-1. **`ensureSelectedTabData(menu, bankType, id)`** — Forces a fresh tab data lookup every time the config dialog is opened, bypassing Blizzard's internal `alreadySelected` early-exit guard. It first resets `menu.selectedTabData = nil` to force `SetSelectedTab` to re-fetch, then falls back to a direct `C_Bank.FetchPurchasedBankTabData(bankType)` call if the menu's data is still nil. This is necessary because BetterBags shows `BankPanel` only after a fade-in animation, so `BankPanel.purchasedBankTabData` may be empty during `BANKFRAME_OPENED`; the fallback ensures icon data is always available.
+1. **`ensureSelectedTabData(menu, bankType, id)`** — Forces a fresh tab data lookup every time the config dialog is opened, bypassing Blizzard's internal `alreadySelected` early-exit guard. It first resets `menu.selectedTabData = nil` to force `SetSelectedTab` to re-fetch, then falls back to a direct `C_Bank.FetchPurchasedBankTabData(bankType)` call if the menu's data is still nil. This is necessary because MarnasBag shows `BankPanel` only after a fade-in animation, so `BankPanel.purchasedBankTabData` may be empty during `BANKFRAME_OPENED`; the fallback ensures icon data is always available.
 
 2. **`reconnectIconCallback(menu)`** — Explicitly re-wires `menu.IconSelector:SetSelectedCallback` with a fresh closure after the menu is reparented. Without this, the callback installed in `BankPanelTabSettingsMenuMixin:OnLoad` may become stale, causing icon clicks in the grid to silently do nothing. The closure updates `BorderBox.SelectedIconArea.SelectedIconButton` with the chosen icon texture.
 
@@ -492,7 +492,7 @@ When a specific character bank tab is selected:
 - The single "Bank" tab always appears first when visible
 
 ### Note on Reagent Bank
-As of the latest patch, the Reagent Bank has been removed from World of Warcraft. This feature and related tabs are no longer included in BetterBags.
+As of the latest patch, the Reagent Bank has been removed from World of Warcraft. This feature and related tabs are no longer included in MarnasBag.
 
 ### Classic (`classic/`)
 - `bag.lua` - TBC/Wrath bag handling
@@ -513,8 +513,8 @@ BAG_VIEW = {
 
 ### Frame Hierarchy
 ```
-BetterBagsBag (Main Container)
-├── BetterBagsBankSlots (Bank Tab Slots Panel — retail bank only)
+MarnasBagBag (Main Container)
+├── MarnasBagBankSlots (Bank Tab Slots Panel — retail bank only)
 │   │   Normally hidden above the bag; when open, reanchored to below the bag
 │   └── Grid (11 BankSlotButton frames)
 ├── SearchFrame

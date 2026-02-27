@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class TooltipScanner: AceModule
@@ -18,7 +18,7 @@ function tooltipScanner:OnInitialize()
   -- For Classic/Era: Create a hidden GameTooltip for scanning
   -- Retail uses C_TooltipInfo API and doesn't need this
   if not addon.isRetail then
-    self.scanTooltip = CreateFrame("GameTooltip", "BetterBagsScanTooltip", nil, "GameTooltipTemplate")
+    self.scanTooltip = CreateFrame("GameTooltip", "MarnasBagScanTooltip", nil, "GameTooltipTemplate")
     self.scanTooltip:SetOwner(WorldFrame, "ANCHOR_NONE")
     debug:Log("TooltipScanner", "Created GameTooltip scanner for Classic/Era")
   else
@@ -120,8 +120,8 @@ function tooltipScanner:ExtractClassic(bagid, slotid)
   -- Cap at 30 lines to avoid the Classic bug where lines 9+ have incorrect FontString names
   -- In practice, most item tooltips are well under 30 lines
   for i = 1, math.min(numLines, 30) do
-    local leftText = _G["BetterBagsScanTooltipTextLeft"..i]
-    local rightText = _G["BetterBagsScanTooltipTextRight"..i]
+    local leftText = _G["MarnasBagScanTooltipTextLeft"..i]
+    local rightText = _G["MarnasBagScanTooltipTextRight"..i]
 
     -- Extract text from left-aligned FontString
     if leftText then

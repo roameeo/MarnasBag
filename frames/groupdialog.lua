@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Localization: AceModule
@@ -25,7 +25,7 @@ function groupDialog:Initialize()
 	---@class Themes: AceModule
 	local themes = addon:GetModule('Themes')
 
-	local f = CreateFrame('Frame', "BetterBagsGroupDialog", UIParent)
+	local f = CreateFrame('Frame', "MarnasBagGroupDialog", UIParent)
 	self.frame = f
 	f:SetFrameStrata("DIALOG")
 	f:SetFrameLevel(600)
@@ -48,7 +48,7 @@ function groupDialog:Initialize()
 	self.input:SetWidth(200)
 	self.input:SetHeight(20)
 
-	self.dropdown = CreateFrame("Frame", "BetterBagsGroupDialogDropdown", f, "UIDropDownMenuTemplate")
+	self.dropdown = CreateFrame("Frame", "MarnasBagGroupDialogDropdown", f, "UIDropDownMenuTemplate")
 	UIDropDownMenu_SetWidth(self.dropdown, 120)
 
 	self.yes = CreateFrame('Button', nil, f, "UIPanelButtonTemplate")

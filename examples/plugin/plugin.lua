@@ -1,14 +1,14 @@
 --[[
-  This is an example of how to create a category plugin for BetterBags.
+  This is an example of how to create a category plugin for MarnasBag.
   Your addon must be a loadable addon, and it must have a .toc file,
-  and it must have a dependency on BetterBags.
+  and it must have a dependency on MarnasBag.
   You do not need to bundle Ace or any other library with your addon, as
-  BetterBags will provide them for you.
+  MarnasBag will provide them for you.
 ]]--
 
--- This will get a handle to the BetterBags addon.
----@class BetterBags: AceAddon
-local addon = LibStub('AceAddon-3.0'):GetAddon("BetterBags")
+-- This will get a handle to the MarnasBag addon.
+---@class MarnasBag: AceAddon
+local addon = LibStub('AceAddon-3.0'):GetAddon("MarnasBag")
 
 -- This will get a handle to the Categories module, which exposes
 -- the API for creating categories.
@@ -16,7 +16,7 @@ local addon = LibStub('AceAddon-3.0'):GetAddon("BetterBags")
 local categories = addon:GetModule('Categories')
 
 -- This will get a handle to the Config module, which exposes
--- the API for creating a configuration entry in the BetterBags config panel.
+-- the API for creating a configuration entry in the MarnasBag config panel.
 ---@class Config: AceModule
 local config = addon:GetModule('Config')
 

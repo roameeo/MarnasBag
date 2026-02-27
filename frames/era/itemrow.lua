@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Constants: AceModule
@@ -80,7 +80,7 @@ function item:_DoCreate(ctx)
 
   -- Generate the item button name. This is needed because item
   -- button textures are named after the button itself.
-  local name = format("BetterBagsRowItemButton%d", buttonCount)
+  local name = format("MarnasBagRowItemButton%d", buttonCount)
   buttonCount = buttonCount + 1
 
   -- Create a hidden parent to the ItemButton frame to work around

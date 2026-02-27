@@ -56,9 +56,9 @@ local name, isHeader, isExpanded, isUnused, isWatched, count, icon,
 
 | TOC File | Currency Pane Used |
 |----------|-------------------|
-| BetterBags.toc (Retail) | `config/currencypane.lua` |
-| BetterBags_Mists.toc (Classic/Cata) | `config/classic/currencypane.lua` |
-| BetterBags_Vanilla.toc (Classic Era) | `config/currencypane.lua` |
-| BetterBags_TBC.toc (TBC Classic) | `config/currencypane.lua` |
+| MarnasBag.toc (Retail) | `config/currencypane.lua` |
+| MarnasBag_Mists.toc (Classic/Cata) | `config/classic/currencypane.lua` |
+| MarnasBag_Vanilla.toc (Classic Era) | `config/currencypane.lua` |
+| MarnasBag_TBC.toc (TBC Classic) | `config/currencypane.lua` |
 
 Note: Vanilla and TBC use the retail currencypane.lua even though they use Classic-style currency modules in frames/, because the currency pane module is loaded separately and the API differences are minimal for the options UI.

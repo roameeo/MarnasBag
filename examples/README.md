@@ -1,6 +1,6 @@
 # Examples Module
 
-The Examples module provides practical, working examples and templates for extending BetterBags functionality through plugins and custom integrations. This serves as a reference implementation for developers creating BetterBags extensions.
+The Examples module provides practical, working examples and templates for extending MarnasBag functionality through plugins and custom integrations. This serves as a reference implementation for developers creating MarnasBag extensions.
 
 ## Overview
 
@@ -13,14 +13,14 @@ The Examples module demonstrates:
 
 ## Plugin Example (`plugin/plugin.lua`)
 
-A complete, annotated example showing how to create a BetterBags plugin addon.
+A complete, annotated example showing how to create a MarnasBag plugin addon.
 
 ### Plugin Structure
 
 #### Required Setup
 ```lua
--- 1. Get BetterBags addon handle
-local addon = LibStub('AceAddon-3.0'):GetAddon("BetterBags")
+-- 1. Get MarnasBag addon handle
+local addon = LibStub('AceAddon-3.0'):GetAddon("MarnasBag")
 
 -- 2. Get required modules
 local categories = addon:GetModule('Categories')
@@ -31,16 +31,16 @@ local context = addon:GetModule('Context')
 
 #### Addon Requirements
 - **TOC File**: Your addon must have a `.toc` file
-- **Dependency**: Must declare BetterBags as a dependency
-- **No Bundling**: Don't bundle Ace or other libraries (BetterBags provides them)
+- **Dependency**: Must declare MarnasBag as a dependency
+- **No Bundling**: Don't bundle Ace or other libraries (MarnasBag provides them)
 
 Example `.toc` file:
 ```toc
 ## Interface: 100200
-## Title: My BetterBags Plugin
+## Title: My MarnasBag Plugin
 ## Author: YourName
 ## Version: 1.0
-## Dependencies: BetterBags
+## Dependencies: MarnasBag
 
 plugin.lua
 ```
@@ -271,24 +271,24 @@ categories:RegisterCategoryFunction("myAddon_herbs", herbFunction)
 
 ### 1. Create Addon Structure
 ```
-MyBetterBagsPlugin/
-├── MyBetterBagsPlugin.toc
+MyMarnasBagPlugin/
+├── MyMarnasBagPlugin.toc
 ├── main.lua
 └── categories.lua
 ```
 
 ### 2. Set Up Dependencies
 ```toc
-## Dependencies: BetterBags
-## OptionalDeps: BetterBags_Config
+## Dependencies: MarnasBag
+## OptionalDeps: MarnasBag_Config
 ```
 
 ### 3. Initialize on Load
 ```lua
 local function OnAddonLoaded(_, addonName)
-  if addonName ~= "BetterBags" then return end
+  if addonName ~= "MarnasBag" then return end
   
-  -- BetterBags is loaded, initialize plugin
+  -- MarnasBag is loaded, initialize plugin
   InitializePlugin()
 end
 
@@ -357,7 +357,7 @@ end)
 1. **Function Caching**: Results are cached per item
 2. **Minimal Processing**: Keep category functions lightweight
 3. **Batch Operations**: Use WipeCategory before bulk adds
-4. **Lazy Loading**: Don't process until BetterBags is ready
+4. **Lazy Loading**: Don't process until MarnasBag is ready
 
 ## Error Handling
 
@@ -368,7 +368,7 @@ local success, err = pcall(function()
 end)
 
 if not success then
-  print("BetterBags Plugin Error:", err)
+  print("MarnasBag Plugin Error:", err)
 end
 ```
 
@@ -382,16 +382,16 @@ end
 ## Support and Resources
 
 - **API Documentation**: See individual module READMEs
-- **Discord**: Join BetterBags Discord for support
+- **Discord**: Join MarnasBag Discord for support
 - **GitHub**: Submit issues or pull requests
 - **Examples**: This folder contains working examples
 
 ## Version Compatibility
 
-Always check BetterBags version compatibility:
+Always check MarnasBag version compatibility:
 ```lua
 local version = addon.version or "unknown"
 if version < "2.0.0" then
-  print("Plugin requires BetterBags 2.0.0 or higher")
+  print("Plugin requires MarnasBag 2.0.0 or higher")
   return
 end

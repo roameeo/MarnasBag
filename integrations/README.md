@@ -1,6 +1,6 @@
-# BetterBags Integrations Module
+# MarnasBag Integrations Module
 
-The integrations module provides seamless compatibility with popular World of Warcraft addons, enhancing BetterBags functionality when these addons are present.
+The integrations module provides seamless compatibility with popular World of Warcraft addons, enhancing MarnasBag functionality when these addons are present.
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@ The integrations module automatically detects and integrates with third-party ad
 Provides gamepad/controller support through the ConsolePort addon.
 
 **Features:**
-- Adds BetterBags frames to ConsolePort's cursor system
+- Adds MarnasBag frames to ConsolePort's cursor system
 - Enables controller navigation of bags and menus
 - Modifies config to open Blizzard settings UI when using ConsolePort
 - Automatic context menu cursor selection
@@ -67,8 +67,8 @@ Integrates with Masque for custom button skinning.
 ```
 
 **Groups:**
-- `BetterBags/Backpack` - All backpack item buttons
-- `BetterBags/Bank` - All bank item buttons
+- `MarnasBag/Backpack` - All backpack item buttons
+- `MarnasBag/Bank` - All bank item buttons
 
 **Event Handlers:**
 - `item/NewButton` - Register new item buttons
@@ -146,13 +146,13 @@ function module:OnEnable()
     return  -- Addon not found, integration disabled
   end
   -- Integration code here
-  print("BetterBags: AddonName integration enabled.")
+  print("MarnasBag: AddonName integration enabled.")
 end
 ```
 
 ### Event-Based Integration
 
-Integrations typically hook into BetterBags events:
+Integrations typically hook into MarnasBag events:
 
 ```lua
 events:RegisterMessage('event/name', function(_, ...)
@@ -162,7 +162,7 @@ end)
 
 ### Non-Invasive Design
 
-- Integrations never modify the core BetterBags functionality
+- Integrations never modify the core MarnasBag functionality
 - All integrations can be disabled without affecting base features
 - Integrations respect user preferences and theme settings
 
@@ -171,7 +171,7 @@ end)
 Integrations are automatic and require no configuration:
 
 1. **Install the third-party addon** (ConsolePort, Masque, Pawn, or SimpleItemLevel)
-2. **Load BetterBags** - Integration automatically detects and activates
+2. **Load MarnasBag** - Integration automatically detects and activates
 3. **Check chat** - Confirmation message appears when integration loads
 
 ### Disabling Integrations
@@ -204,7 +204,7 @@ function myIntegration:OnEnable()
     -- Integration logic
   end)
   
-  print("BetterBags: MyAddon integration enabled.")
+  print("MarnasBag: MyAddon integration enabled.")
 end
 ```
 
@@ -272,7 +272,7 @@ masque:ReapplyBlend(button)
 ### Integration Not Working
 
 1. **Check addon is installed**: Verify third-party addon is present
-2. **Check load order**: BetterBags should load after integrated addon
+2. **Check load order**: MarnasBag should load after integrated addon
 3. **Check chat message**: Look for "integration enabled" message
 4. **Check errors**: Use `/console scriptErrors 1`
 

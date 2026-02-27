@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Items: AceModule
@@ -30,9 +30,9 @@ function quickfind:OnEnable()
   if not QuickFind.RegisterSource then return end
 
   -- Register our source
-  self:RegisterBetterBagsSource()
+  self:RegisterMarnasBagSource()
 
-  print("BetterBags: QuickFind integration enabled.")
+  print("MarnasBag: QuickFind integration enabled.")
 end
 
 ---Builds the item results list for QuickFind
@@ -94,10 +94,10 @@ function quickfind:CreateResultEntry(itemData, location)
   }
 end
 
----Registers BetterBags as a QuickFind source
-function quickfind:RegisterBetterBagsSource()
+---Registers MarnasBag as a QuickFind source
+function quickfind:RegisterMarnasBagSource()
   QuickFind:RegisterSource({
-    name = 'BetterBags Items',
+    name = 'MarnasBag Items',
     get = function()
       return self:GetItemResults()
     end
@@ -168,7 +168,7 @@ function quickfind:ShowInBag(id)
 
   -- Set search to the exact item name in the embedded in-bag search box
   if not database:GetInBagSearch() then
-    print("QuickFind: In-bag search is disabled. Enable it in BetterBags settings.")
+    print("QuickFind: In-bag search is disabled. Enable it in MarnasBag settings.")
     return
   end
 

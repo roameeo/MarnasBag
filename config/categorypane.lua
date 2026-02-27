@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Events: AceModule
@@ -263,8 +263,8 @@ function categoryPaneProto:LoadPinnedItems()
 end
 
 function categoryPaneProto:ShowCreateCategoryDialog()
-  if not StaticPopupDialogs["BETTERBAGS_CREATE_CATEGORY"] then
-    StaticPopupDialogs["BETTERBAGS_CREATE_CATEGORY"] = {
+  if not StaticPopupDialogs["MARNASBAG_CREATE_CATEGORY"] then
+    StaticPopupDialogs["MARNASBAG_CREATE_CATEGORY"] = {
       text = "Enter new category name:",
       hasEditBox = true,
       button1 = "Create",
@@ -339,7 +339,7 @@ function categoryPaneProto:ShowCreateCategoryDialog()
     }
   end
 
-  StaticPopup_Show("BETTERBAGS_CREATE_CATEGORY", nil, nil, { pane = self })
+  StaticPopup_Show("MARNASBAG_CREATE_CATEGORY", nil, nil, { pane = self })
 end
 
 function categoryPaneProto:ShowCreateSearchCategoryDialog()
@@ -391,8 +391,8 @@ function categoryPaneProto:ShowRenameCategoryDialog(categoryName)
   if not categories:DoesCategoryExist(categoryName) then return end
 
   -- Define the static popup if not already defined
-  if not StaticPopupDialogs["BETTERBAGS_RENAME_CATEGORY"] then
-    StaticPopupDialogs["BETTERBAGS_RENAME_CATEGORY"] = {
+  if not StaticPopupDialogs["MARNASBAG_RENAME_CATEGORY"] then
+    StaticPopupDialogs["MARNASBAG_RENAME_CATEGORY"] = {
       text = L:G("Enter new category name:"),
       hasEditBox = true,
       button1 = L:G("Rename"),
@@ -458,7 +458,7 @@ function categoryPaneProto:ShowRenameCategoryDialog(categoryName)
     }
   end
 
-  StaticPopup_Show("BETTERBAGS_RENAME_CATEGORY", nil, nil, { categoryName = categoryName, pane = self })
+  StaticPopup_Show("MARNASBAG_RENAME_CATEGORY", nil, nil, { categoryName = categoryName, pane = self })
 end
 
 function categoryPaneProto:UpdateDetailPanel()
@@ -909,7 +909,7 @@ function categoryPaneProto:CreateSearchDetailPanel()
 
   self.searchDetail.itemListFrame = list:Create(itemListContainer)
   self.searchDetail.itemListFrame.frame:SetAllPoints()
-  self.searchDetail.itemListFrame:SetupDataSource("BetterBagsCategoryPaneItemFrame", function(f, data)
+  self.searchDetail.itemListFrame:SetupDataSource("MarnasBagCategoryPaneItemFrame", function(f, data)
     ---@cast f CategoryPaneItemFrame
     self:initItemRow(f, data)
   end, function(f, data)
@@ -1213,7 +1213,7 @@ function categoryPaneProto:CreateManualDetailPanel()
 
   self.manualDetail.itemListFrame = list:Create(itemListContainer)
   self.manualDetail.itemListFrame.frame:SetAllPoints()
-  self.manualDetail.itemListFrame:SetupDataSource("BetterBagsCategoryPaneItemFrame", function(f, data)
+  self.manualDetail.itemListFrame:SetupDataSource("MarnasBagCategoryPaneItemFrame", function(f, data)
     ---@cast f CategoryPaneItemFrame
     self:initItemRow(f, data)
   end, function(f, data)
@@ -1541,7 +1541,7 @@ function categoryPane:Create(parent, kind)
   pane.listFrame.frame:SetPoint("TOPLEFT", 0, -58)
   pane.listFrame.frame:SetPoint("BOTTOMRIGHT", 0, 0)
 
-  pane.listFrame:SetupDataSource("BetterBagsPlainTextListButton", function(f, data)
+  pane.listFrame:SetupDataSource("MarnasBagPlainTextListButton", function(f, data)
     ---@cast f CategoryPaneListButton
     pane:initListItem(f, data)
   end, function(f, data)

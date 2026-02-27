@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Localization: AceModule
@@ -119,17 +119,17 @@ L.data["Bank"] = {
   ["zhCN"] = "银行",
   ["zhTW"] = "銀行",
 }
-L.data["BetterBags"] = {
-  ["deDE"] = "BetterBags",
-  ["esES"] = "BetterBags",
-  ["esMX"] = "BetterBags",
-  ["frFR"] = "BetterBags",
-  ["itIT"] = "BetterBags",
-  ["koKR"] = "BetterBags",
-  ["ptBR"] = "BetterBags",
-  ["ruRU"] = "BetterBags",
-  ["zhCN"] = "BetterBags",
-  ["zhTW"] = "BetterBags",
+L.data["MarnasBag"] = {
+  ["deDE"] = "MarnasBag",
+  ["esES"] = "MarnasBag",
+  ["esMX"] = "MarnasBag",
+  ["frFR"] = "MarnasBag",
+  ["itIT"] = "MarnasBag",
+  ["koKR"] = "MarnasBag",
+  ["ptBR"] = "MarnasBag",
+  ["ruRU"] = "MarnasBag",
+  ["zhCN"] = "MarnasBag",
+  ["zhTW"] = "MarnasBag",
 }
 L.data["Bottom Left"] = {
   ["deDE"] = "Unten links",

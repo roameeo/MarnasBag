@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class SearchBox: AceModule
@@ -72,8 +72,8 @@ local simpleDark = {
       end
 
       local close = CreateFrame("Button", nil, decoration)
-      close:SetNormalTexture("Interface\\AddOns\\BetterBags\\textures\\close.png")
-      close:SetHighlightTexture("Interface\\AddOns\\BetterBags\\textures\\close.png")
+      close:SetNormalTexture("Interface\\AddOns\\MarnasBag\\textures\\close.png")
+      close:SetHighlightTexture("Interface\\AddOns\\MarnasBag\\textures\\close.png")
       close:SetSize(12, 12)
       close:SetPoint("TOPRIGHT", decoration, "TOPRIGHT", -8, -8)
       addon.SetScript(close, "OnClick", function(ctx)
@@ -130,8 +130,8 @@ local simpleDark = {
       decoration.title = title
 
       local close = CreateFrame("Button", nil, decoration)
-      close:SetNormalTexture("Interface\\AddOns\\BetterBags\\textures\\close.png")
-      close:SetHighlightTexture("Interface\\AddOns\\BetterBags\\textures\\close.png")
+      close:SetNormalTexture("Interface\\AddOns\\MarnasBag\\textures\\close.png")
+      close:SetHighlightTexture("Interface\\AddOns\\MarnasBag\\textures\\close.png")
       close:SetSize(12, 12)
       close:SetPoint("TOPRIGHT", decoration, "TOPRIGHT", -8, -8)
       close:SetScript("OnClick", function()

@@ -1,16 +1,16 @@
 # Configuration Module
 
-This folder contains the configuration system for BetterBags, providing a comprehensive settings interface and plugin configuration management.
+This folder contains the configuration system for MarnasBag, providing a comprehensive settings interface and plugin configuration management.
 
 ## Overview
 
-The configuration module manages all user-configurable settings for the BetterBags addon, including general settings, bag-specific options, display preferences, and plugin configurations. It provides a centralized GUI for users to customize the addon's behavior.
+The configuration module manages all user-configurable settings for the MarnasBag addon, including general settings, bag-specific options, display preferences, and plugin configurations. It provides a centralized GUI for users to customize the addon's behavior.
 
 ## Files
 
 ### config.lua
 
-The main configuration module that creates and manages the settings interface for BetterBags.
+The main configuration module that creates and manages the settings interface for MarnasBag.
 
 #### Key Features
 
@@ -67,7 +67,7 @@ The main configuration module that creates and manages the settings interface fo
 
 #### Chat Commands
 
-- `/bb` - Opens the BetterBags settings window
+- `/bb` - Opens the MarnasBag settings window
 - `/bbanchor` - Shows anchor frames for positioning bags
 - `/bbdb` - Toggles debug mode
 
@@ -119,7 +119,7 @@ The CategoryPane module provides a comprehensive category management interface w
 
 ### themepane.lua
 
-The ThemePane module provides a theme selection interface within the main settings screen. It allows users to browse and apply visual themes for BetterBags.
+The ThemePane module provides a theme selection interface within the main settings screen. It allows users to browse and apply visual themes for MarnasBag.
 
 #### Key Features
 
@@ -204,7 +204,7 @@ The `classic/currencypane.lua` file provides the same functionality for Classic 
 
 ### plugin.lua
 
-Manages integration of third-party plugin configurations into the main BetterBags settings interface.
+Manages integration of third-party plugin configurations into the main MarnasBag settings interface.
 
 #### Key Functions
 
@@ -237,7 +237,7 @@ config:AddPluginConfig("Plugin Name", optionsTable)
 The system automatically:
 - Creates appropriate UI controls based on option types
 - Handles getting and setting values through plugin callbacks
-- Maintains consistent styling with the main BetterBags interface
+- Maintains consistent styling with the main MarnasBag interface
 
 ## Usage
 

@@ -1,6 +1,6 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field,duplicate-doc-alias
 local addonName = ... ---@type string
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Constants: AceModule

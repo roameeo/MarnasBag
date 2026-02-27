@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class SectionFrame: AceModule
@@ -352,7 +352,7 @@ end
 -- Create and return the drag ghost frame (created once, reused)
 function sectionFrame:GetDragGhost()
   if not self.dragGhost then
-    local ghost = CreateFrame("Frame", "BetterBagsSectionDragGhost", UIParent, "BackdropTemplate")
+    local ghost = CreateFrame("Frame", "MarnasBagSectionDragGhost", UIParent, "BackdropTemplate")
     ghost:SetFrameStrata("TOOLTIP")
     ghost:SetFrameLevel(100)
     ghost:SetBackdrop({

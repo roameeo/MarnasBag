@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Context: AceModule
@@ -14,7 +14,7 @@ local layouts = addon:GetModule('FormLayouts')
 
 ---@class (exact) StackedLayout: FormLayout
 ---@field nextFrame Frame
----@field nextIndex Frame
+---@field nextIndex Frame | Button
 ---@field baseFrame Frame
 ---@field indexFrame Frame
 ---@field underline Frame

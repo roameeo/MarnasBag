@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Context: AceModule
@@ -16,7 +16,7 @@ local debug = addon:NewModule('Debug')
 function debug:OnInitialize()
   self.profiles = {}
   self.enabled = false
-  self.tooltip = CreateFrame('GameTooltip', 'BetterBagsTooltip', UIParent, 'GameTooltipTemplate') --[[@as GameTooltip]]
+  self.tooltip = CreateFrame('GameTooltip', 'MarnasBagTooltip', UIParent, 'GameTooltipTemplate') --[[@as GameTooltip]]
 end
 
 function debug:OnEnable()
@@ -35,7 +35,7 @@ function debug:OnEnable()
   local database = addon:GetModule('Database')
   self.enabled = database:GetDebugMode()
   if self.enabled then
-    print("BetterBags: debug mode enabled")
+    print("MarnasBag: debug mode enabled")
   end
 end
 
@@ -87,7 +87,7 @@ function debug:GetTableLink(value)
     return tostring(value)
   end
   local name, valueType = tostring(debug:GetTableName(value)), debug:GetType(value)
-  return format("|cff%s|HBetterBags%s:%s|h[%s]|h|r", debug.colors[valueType], valueType, name, name)
+  return format("|cff%s|HMarnasBag%s:%s|h[%s]|h|r", debug.colors[valueType], valueType, name, name)
 end
 
 function debug:Clean(value)

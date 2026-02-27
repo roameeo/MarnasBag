@@ -2,11 +2,11 @@
 
 local addonName, root = ... --[[@type string, table]]
 
--- BetterBags is the root module of the addon.
----@class BetterBags: AceModule
+-- MarnasBag is the root module of the addon.
+---@class MarnasBag: AceModule
 local addon = LibStub("AceAddon-3.0"):NewAddon(root, addonName, 'AceHook-3.0')
 
 addon:SetDefaultModuleState(false)
 
-BINDING_NAME_BETTERBAGS_TOGGLESEARCH = "Search Bags"
-BINDING_NAME_BETTERBAGS_TOGGLEBAGS = "Toggle Bags"
+BINDING_NAME_MARNASBAG_TOGGLESEARCH = "Search Bags"
+BINDING_NAME_MARNASBAG_TOGGLEBAGS = "Toggle Bags"

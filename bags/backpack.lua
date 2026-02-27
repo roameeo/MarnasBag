@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub("AceAddon-3.0"):GetAddon(addonName)
 
 ---@class BackpackBehavior: AceModule
@@ -157,7 +157,7 @@ function backpack.proto:OnRefresh(ctx)
 	events:SendMessage(ctx, "bags/RefreshBackpack")
 end
 
----@return FrameStrata
+---@return string
 function backpack.proto:GetFrameStrata()
 	return "MEDIUM"
 end
@@ -486,8 +486,8 @@ function backpack.proto:ShowRenameGroupDialog(groupID)
 	if not group then return end
 
 	-- Define the static popup if not already defined
-	if not StaticPopupDialogs["BETTERBAGS_RENAME_GROUP"] then
-		StaticPopupDialogs["BETTERBAGS_RENAME_GROUP"] = {
+	if not StaticPopupDialogs["MARNASBAG_RENAME_GROUP"] then
+		StaticPopupDialogs["MARNASBAG_RENAME_GROUP"] = {
 			text = L:G("Enter new group name:"),
 			hasEditBox = true,
 			button1 = L:G("Rename"),
@@ -526,7 +526,7 @@ function backpack.proto:ShowRenameGroupDialog(groupID)
 		}
 	end
 
-	StaticPopup_Show("BETTERBAGS_RENAME_GROUP", nil, nil, { groupID = groupID })
+	StaticPopup_Show("MARNASBAG_RENAME_GROUP", nil, nil, { groupID = groupID })
 end
 
 -- ShowDeleteGroupConfirm shows a confirmation dialog to delete a group.
@@ -536,8 +536,8 @@ function backpack.proto:ShowDeleteGroupConfirm(groupID)
 	if not group then return end
 
 	-- Define the static popup if not already defined
-	if not StaticPopupDialogs["BETTERBAGS_DELETE_GROUP"] then
-		StaticPopupDialogs["BETTERBAGS_DELETE_GROUP"] = {
+	if not StaticPopupDialogs["MARNASBAG_DELETE_GROUP"] then
+		StaticPopupDialogs["MARNASBAG_DELETE_GROUP"] = {
 			text = L:G("Are you sure you want to delete the group '%s'? Categories in this group will be moved back to Backpack."),
 			button1 = L:G("Delete"),
 			button2 = L:G("Cancel"),
@@ -552,7 +552,7 @@ function backpack.proto:ShowDeleteGroupConfirm(groupID)
 		}
 	end
 
-	StaticPopup_Show("BETTERBAGS_DELETE_GROUP", group.name, nil, { groupID = groupID })
+	StaticPopup_Show("MARNASBAG_DELETE_GROUP", group.name, nil, { groupID = groupID })
 end
 
 -------

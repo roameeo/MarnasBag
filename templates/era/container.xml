@@ -1,15 +1,15 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
 
-  <Frame name="BetterBagsBagDefaultPanelTemplate" inherits="DefaultPanelTemplate" virtual="true">
+  <Frame name="MarnasBagBagDefaultPanelTemplate" inherits="DefaultPanelTemplate" virtual="true">
     <Frames>
       <Button name="$parentCloseButton" parentKey="CloseButton" inherits="UIPanelCloseButtonDefaultAnchors"/>
       <Frame name="$parentBackdrop" parentKey="Backdrop" inherits="BackdropTemplate" mixin="BackdropTemplateMixin" frameStrata="BACKGROUND" setAllPoints="true"/>
     </Frames>
   </Frame>
-  <Frame name="BetterBagsBagSlotPanelTemplate" inherits="ButtonFrameTemplate" virtual="true">
+  <Frame name="MarnasBagBagSlotPanelTemplate" inherits="ButtonFrameTemplate" virtual="true">
   </Frame>
-  <Frame name="BetterBagsSearchPanelTemplate" inherits="InsetFrameTemplate" virtual="true">
+  <Frame name="MarnasBagSearchPanelTemplate" inherits="InsetFrameTemplate" virtual="true">
 		<Layers>
 			<Layer level="BORDER" textureSubLevel="1">
       	<Texture name="$parentTopLeftCorner" inherits="UI-Frame-TopCornerLeft">
@@ -82,17 +82,17 @@
       <Frame name="$parentInset" parentKey="Inset" />
     </Frames>
   </Frame>
-  <Button name="BetterBagsPlainTextListButton" virtual="true">
+  <Button name="MarnasBagPlainTextListButton" virtual="true">
       <Size>
       <AbsDimension y="30"/>
     </Size>
   </Button>
-  <Frame name="BetterBagsCategoryPaneItemFrame" virtual="true">
+  <Frame name="MarnasBagCategoryPaneItemFrame" virtual="true">
     <Size>
       <AbsDimension y="30"/>
     </Size>
   </Frame>
-  <Button name="BetterBagsSecureBagTabTemplate" virtual="true" inherits="InsecureActionButtonTemplate">
+  <Button name="MarnasBagSecureBagTabTemplate" virtual="true" inherits="InsecureActionButtonTemplate">
     <Size>
       <AbsDimension x="115" y="32"/>
     </Size>

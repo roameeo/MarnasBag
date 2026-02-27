@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Constants: AceModule
@@ -140,7 +140,7 @@ end
 
 function BagButtonFrame.bagButtonProto:OnClick()
   if InCombatLockdown() then
-    print("BetterBags: "..L:G("Cannot change bags in combat."))
+    print("MarnasBag: "..L:G("Cannot change bags in combat."))
     return
   end
   if self.empty and self.kind == const.BAG_KIND.BANK and self.canBuy then self:CheckForPurchase() return end
@@ -153,7 +153,7 @@ end
 
 function BagButtonFrame.bagButtonProto:OnDragStart()
   if InCombatLockdown() then
-    print("BetterBags: "..L:G("Cannot change bags in combat."))
+    print("MarnasBag: "..L:G("Cannot change bags in combat."))
     return
   end
   PickupBagFromSlot(self.invID)
@@ -161,7 +161,7 @@ end
 
 function BagButtonFrame.bagButtonProto:OnReceiveDrag()
   if InCombatLockdown() then
-    print("BetterBags: "..L:G("Cannot change bags in combat."))
+    print("MarnasBag: "..L:G("Cannot change bags in combat."))
     return
   end
   PutItemInBag(self.invID)
@@ -186,7 +186,7 @@ end
 ---@return BagButton
 function BagButtonFrame:_DoCreate()
   local b = setmetatable({}, {__index = BagButtonFrame.bagButtonProto})
-  local name = format("BetterBagsBagButton%d", buttonCount)
+  local name = format("MarnasBagBagButton%d", buttonCount)
   buttonCount = buttonCount + 1
 
   local f = CreateFrame("ItemButton", name)

@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub("AceAddon-3.0"):GetAddon(addonName)
 
 ---@class ContextMenu: AceModule
@@ -47,7 +47,7 @@ function contextMenu:OnInitialize()
 end
 
 function contextMenu:OnEnable()
-	local frame = LibDD:Create_UIDropDownMenu("BetterBagsContextMenu", UIParent)
+	local frame = LibDD:Create_UIDropDownMenu("MarnasBagContextMenu", UIParent)
 	LibDD:EasyMenu_Initialize(frame, 4, {})
 	self.frame = frame
 end
@@ -254,7 +254,7 @@ function contextMenu:CreateContextMenu(bag)
 			tooltipText = L:G("Click to toggle the display of the bag slots."),
 			func = function()
 				if InCombatLockdown() then
-					print("BetterBags: " .. L:G("Cannot toggle bag slots in combat."))
+					print("MarnasBag: " .. L:G("Cannot toggle bag slots in combat."))
 					return
 				end
 				if not bag.slots then
@@ -284,11 +284,11 @@ function contextMenu:CreateContextMenu(bag)
 			tooltipTitle = L:G("Show Bag Button"),
 			tooltipText = L:G("Click to toggle the display of the Blizzard bag button."),
 			checked = function()
-				local sneakyFrame = _G["BetterBagsSneakyFrame"] ---@type Frame
+				local sneakyFrame = _G["MarnasBagSneakyFrame"] ---@type Frame
 				return BagsBar:GetParent() ~= sneakyFrame
 			end,
 			func = function()
-				local sneakyFrame = _G["BetterBagsSneakyFrame"] ---@type Frame
+				local sneakyFrame = _G["MarnasBagSneakyFrame"] ---@type Frame
 				local isShown = BagsBar:GetParent() ~= sneakyFrame
 				if isShown then
 					BagsBar:SetParent(sneakyFrame)

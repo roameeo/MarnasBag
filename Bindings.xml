@@ -1,8 +1,8 @@
 <Bindings>
- <Binding name="BETTERBAGS_TOGGLESEARCH" category="BetterBags">
-  BetterBags_ToggleSearch()
+ <Binding name="MARNASBAG_TOGGLESEARCH" category="MarnasBag">
+  MarnasBag_ToggleSearch()
  </Binding>
- <Binding name="BETTERBAGS_TOGGLEBAGS" category="BetterBags">
-  BetterBags_ToggleBags()
+ <Binding name="MARNASBAG_TOGGLEBAGS" category="MarnasBag">
+  MarnasBag_ToggleBags()
  </Binding>
 </Bindings>

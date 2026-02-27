@@ -1,6 +1,6 @@
 # Views Module
 
-The Views module provides the core view system for BetterBags, implementing different display layouts for bag contents. It handles item rendering, section management, and view-specific behaviors for both grid-based category views and bag-based views.
+The Views module provides the core view system for MarnasBag, implementing different display layouts for bag contents. It handles item rendering, section management, and view-specific behaviors for both grid-based category views and bag-based views.
 
 ## Module Structure
 

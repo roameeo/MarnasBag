@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Constants: AceModule
@@ -40,7 +40,7 @@ local formCounter = 0
 ---@return FormFrame
 function form:Create(opts)
   local l = setmetatable({}, {__index = formFrame}) --[[@as FormFrame]]
-  l.frame = CreateFrame('Frame', format("BetterBagsForm%d%s", formCounter, opts.title), UIParent)
+  l.frame = CreateFrame('Frame', format("MarnasBagForm%d%s", formCounter, opts.title), UIParent)
   formCounter = formCounter + 1
 
   l.frame:SetFrameStrata("DIALOG")

@@ -4,7 +4,7 @@ This directory contains bag-type-specific behavior implementations that decouple
 
 ## Architecture
 
-BetterBags uses a **Composition with Strategy Pattern** to separate shared bag functionality from implementation-specific behavior. Each behavior instance stores a reference to its parent bag, allowing methods to access bag state via `self.bag`.
+MarnasBag uses a **Composition with Strategy Pattern** to separate shared bag functionality from implementation-specific behavior. Each behavior instance stores a reference to its parent bag, allowing methods to access bag state via `self.bag`.
 
 ```
 BagFrame (shared core in frames/bag.lua)
@@ -150,7 +150,7 @@ To add a new bag type (e.g., Guild Bank):
 Behavior modules must load **before** `frames/bag.lua`:
 
 ```
-# In BetterBags.toc
+# In MarnasBag.toc
 bags\backpack.lua
 bags\bank.lua
 ...
@@ -160,7 +160,7 @@ frames\bag.lua
 Version-specific overrides load **after** base behavior:
 
 ```
-# In BetterBags_Vanilla.toc
+# In MarnasBag_Vanilla.toc
 bags\backpack.lua
 bags\bank.lua
 bags\era\bank.lua    # Overrides bank.proto methods

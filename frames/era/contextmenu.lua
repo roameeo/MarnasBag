@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class ContextMenu: AceModule
@@ -43,7 +43,7 @@ function contextMenu:OnInitialize()
 end
 
 function contextMenu:OnEnable()
-  local frame = LibDD:Create_UIDropDownMenu("BetterBagsContextMenu", UIParent)
+  local frame = LibDD:Create_UIDropDownMenu("MarnasBagContextMenu", UIParent)
   LibDD:EasyMenu_Initialize(frame, 4, {})
   self.frame = frame
 end

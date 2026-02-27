@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub("AceAddon-3.0"):GetAddon(addonName)
 
 ---@class BankBehavior: AceModule
@@ -262,9 +262,10 @@ function bank.proto:OnCreate(ctx)
 	-- shows all possible Blizzard bank tabs and lets the player filter the
 	-- bank view to a single tab.
 	if addon.isRetail then
+		---@type bankSlotsPanel
 		local slots = bankSlots:CreatePanel(ctx, self.bag.frame)
 		if slots then
-			self.bag.slots = slots
+			self.bag.slots = slots ---@type bankSlotsPanel
 		end
 	end
 
@@ -295,7 +296,7 @@ function bank.proto:OnRefresh()
 	-- Retail bank is event-driven, refresh handled via BANKFRAME events
 end
 
----@return FrameStrata
+---@return string
 function bank.proto:GetFrameStrata()
 	return "HIGH"
 end
@@ -548,7 +549,7 @@ function bank.proto:SwitchToGroup(ctx, groupID)
 		if BankPanel and BankPanel.SetBankType then
 			BankPanel:SetBankType(Enum.BankType.Character)
 		end
-		self.bag.bankTab = Enum.BagIndex.Characterbanktab or Enum.BagIndex.Bank or -1
+		self.bag.bankTab = Enum.BagIndex.Characterbanktab or Enum.BagIndex.Bank
 	end
 
 	self.bag:SetTitle(group.name)
@@ -565,7 +566,7 @@ end
 function bank.proto:SwitchToBankAndWipe(ctx)
 	-- Fallback used in event hooks when closing bank
 	ctx:Set("wipe", true)
-	self.bag.bankTab = Enum.BagIndex.Characterbanktab or Enum.BagIndex.Bank or -1
+	self.bag.bankTab = Enum.BagIndex.Characterbanktab or Enum.BagIndex.Bank
 	if BankPanel and BankPanel.SetBankType then
 		BankPanel:SetBankType(Enum.BankType.Character)
 	end

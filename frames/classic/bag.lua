@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class BagFrame: AceModule
@@ -93,8 +93,8 @@ function bagFrame:Create(ctx, kind)
 
   local name = kind == const.BAG_KIND.BACKPACK and "Backpack" or "Bank"
   -- The main display frame for the bag.
-  ---@class Frame: BetterBagsClassicBagPortrait
-  local f = CreateFrame("Frame", "BetterBagsBag"..name, nil)
+  ---@class Frame: MarnasBagClassicBagPortrait
+  local f = CreateFrame("Frame", "MarnasBagBag"..name, nil)
   -- Setup the main frame defaults.
   b.frame = f
   b.sideAnchor = CreateFrame("Frame", f:GetName().."LeftAnchor", b.frame)

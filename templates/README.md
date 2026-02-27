@@ -1,6 +1,6 @@
-# BetterBags Templates Module
+# MarnasBag Templates Module
 
-The templates module contains XML template definitions and Lua mixins that define reusable UI elements for the BetterBags addon. These templates ensure consistent styling and behavior across the interface.
+The templates module contains XML template definitions and Lua mixins that define reusable UI elements for the MarnasBag addon. These templates ensure consistent styling and behavior across the interface.
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ The templates module contains XML template definitions and Lua mixins that defin
 
 ## Overview
 
-Templates in WoW addons are XML-defined UI structures that can be inherited and reused across multiple frames. BetterBags uses templates to maintain consistent UI elements while supporting different WoW client versions (Retail vs Classic Era).
+Templates in WoW addons are XML-defined UI structures that can be inherited and reused across multiple frames. MarnasBag uses templates to maintain consistent UI elements while supporting different WoW client versions (Retail vs Classic Era).
 
 ## Core Templates
 
@@ -26,36 +26,36 @@ Templates in WoW addons are XML-defined UI structures that can be inherited and 
 
 Defines basic container and button templates used throughout the addon.
 
-#### BetterBagsSearchPanelTemplate
+#### MarnasBagSearchPanelTemplate
 - **Inherits:** `SimplePanelTemplate`
 - **Purpose:** Base template for search panels
 - **Usage:** Search interface panels
 
 ```xml
-<Frame name="BetterBagsSearchPanelTemplate" inherits="SimplePanelTemplate" virtual="true">
+<Frame name="MarnasBagSearchPanelTemplate" inherits="SimplePanelTemplate" virtual="true">
 </Frame>
 ```
 
-#### BetterBagsPlainTextListButton
+#### MarnasBagPlainTextListButton
 - **Purpose:** Simple text list button
 - **Height:** 30 pixels
 - **Usage:** Generic list items
 
 ```xml
-<Button name="BetterBagsPlainTextListButton" virtual="true">
+<Button name="MarnasBagPlainTextListButton" virtual="true">
   <Size>
     <AbsDimension y="30"/>
   </Size>
 </Button>
 ```
 
-#### BetterBagsSecureBagTabTemplate
+#### MarnasBagSecureBagTabTemplate
 - **Inherits:** `PanelTabButtonTemplate`, `InsecureActionButtonTemplate`
 - **Purpose:** Secure tab buttons for bag switching
 - **Usage:** Bank tabs, bag tabs
 
 ```xml
-<Button name="BetterBagsSecureBagTabTemplate" virtual="true" 
+<Button name="MarnasBagSecureBagTabTemplate" virtual="true" 
         inherits="PanelTabButtonTemplate,InsecureActionButtonTemplate">
 </Button>
 ```
@@ -64,7 +64,7 @@ Defines basic container and button templates used throughout the addon.
 
 Templates specifically for the debug interface.
 
-#### BetterBagsDebugListButton
+#### MarnasBagDebugListButton
 - **Purpose:** Debug log list item
 - **Height:** 20 pixels
 - **Components:**
@@ -73,7 +73,7 @@ Templates specifically for the debug interface.
   - `Message`: Debug message text
 
 ```xml
-<Button name="BetterBagsDebugListButton" virtual="true">
+<Button name="MarnasBagDebugListButton" virtual="true">
   <Size><AbsDimension y="20"/></Size>
   <Layers>
     <Layer level="OVERLAY">
@@ -91,14 +91,14 @@ Templates specifically for the debug interface.
 </Button>
 ```
 
-#### BetterBagsItemBrowserButton
+#### MarnasBagItemBrowserButton
 - **Purpose:** Item browser list entry
 - **Height:** 20 pixels
 - **Components:**
   - `Title`: Item/category title
 
 ```xml
-<Button name="BetterBagsItemBrowserButton" virtual="true">
+<Button name="MarnasBagItemBrowserButton" virtual="true">
   <Size><AbsDimension y="20"/></Size>
   <Layers>
     <Layer level="OVERLAY">
@@ -116,7 +116,7 @@ Templates specifically for the debug interface.
 
 Classic Era versions require different templates due to UI differences.
 
-#### BetterBagsBagDefaultPanelTemplate
+#### MarnasBagBagDefaultPanelTemplate
 - **Inherits:** `DefaultPanelTemplate`
 - **Purpose:** Main bag panel for Classic Era
 - **Components:**
@@ -124,7 +124,7 @@ Classic Era versions require different templates due to UI differences.
   - `Backdrop`: Background frame
 
 ```xml
-<Frame name="BetterBagsBagDefaultPanelTemplate" inherits="DefaultPanelTemplate" virtual="true">
+<Frame name="MarnasBagBagDefaultPanelTemplate" inherits="DefaultPanelTemplate" virtual="true">
   <Frames>
     <Button name="$parentCloseButton" parentKey="CloseButton" 
             inherits="UIPanelCloseButtonDefaultAnchors"/>
@@ -135,12 +135,12 @@ Classic Era versions require different templates due to UI differences.
 </Frame>
 ```
 
-#### BetterBagsBagSlotPanelTemplate
+#### MarnasBagBagSlotPanelTemplate
 - **Inherits:** `ButtonFrameTemplate`
 - **Purpose:** Bag slot panel for Classic Era
 - **Usage:** Container for bag slot buttons
 
-#### Era BetterBagsSearchPanelTemplate
+#### Era MarnasBagSearchPanelTemplate
 - **Inherits:** `InsetFrameTemplate`
 - **Purpose:** Search panel with Classic Era styling
 - **Features:** Full border decoration with corners and edges
@@ -251,10 +251,10 @@ end
 
 ```lua
 -- In Lua code
-local frame = CreateFrame("Frame", "MyFrame", parent, "BetterBagsSearchPanelTemplate")
+local frame = CreateFrame("Frame", "MyFrame", parent, "MarnasBagSearchPanelTemplate")
 
 -- For buttons
-local button = CreateFrame("Button", "MyButton", parent, "BetterBagsPlainTextListButton")
+local button = CreateFrame("Button", "MyButton", parent, "MarnasBagPlainTextListButton")
 ```
 
 ### Accessing Template Elements
@@ -273,7 +273,7 @@ local message = button.Message
 
 ```xml
 <!-- Create a new template based on existing one -->
-<Frame name="MyCustomTemplate" inherits="BetterBagsSearchPanelTemplate" virtual="true">
+<Frame name="MyCustomTemplate" inherits="MarnasBagSearchPanelTemplate" virtual="true">
   <!-- Add custom elements -->
   <Frames>
     <Button name="$parentCustomButton" parentKey="CustomButton">
@@ -292,11 +292,11 @@ Blizzard Templates
     ↓
 SimplePanelTemplate
     ↓
-BetterBagsSearchPanelTemplate (Retail)
+MarnasBagSearchPanelTemplate (Retail)
 
 InsetFrameTemplate
     ↓
-BetterBagsSearchPanelTemplate (Era)
+MarnasBagSearchPanelTemplate (Era)
 ```
 
 ### Multiple Inheritance
@@ -310,7 +310,7 @@ Templates can inherit from multiple parents:
 
 ### 1. Template Naming
 - Use descriptive names with addon prefix
-- Include purpose in name (e.g., `BetterBagsDebugListButton`)
+- Include purpose in name (e.g., `MarnasBagDebugListButton`)
 - Keep virtual templates clearly marked
 
 ### 2. Size Management
@@ -389,7 +389,7 @@ Templates must be loaded before use:
 
 ```lua
 -- Check if template exists
-if _G["BetterBagsSearchPanelTemplate"] then
+if _G["MarnasBagSearchPanelTemplate"] then
   print("Template loaded")
 end
 

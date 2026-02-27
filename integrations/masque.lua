@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Events: AceModule
@@ -57,9 +57,9 @@ function masque:OnEnable()
   if not Masque then return end
   debug:Log("Masque", "Masque enabled.")
   self.groups = {}
-  self.groups["Backpack"] = Masque:Group('BetterBags', 'Backpack')
+  self.groups["Backpack"] = Masque:Group('MarnasBag', 'Backpack')
   self.groups["Backpack"]:RegisterCallback(self.OnSkinChange, self)
-  self.groups["Bank"] = Masque:Group('BetterBags', 'Bank')
+  self.groups["Bank"] = Masque:Group('MarnasBag', 'Bank')
   self.groups["Bank"]:RegisterCallback(self.OnSkinChange, self)
 
   events:RegisterMessage('item/NewButton', function(_, item, decoration)
@@ -103,7 +103,7 @@ function masque:OnEnable()
     group:RemoveButton(bag.frame)
   end)
 
-  print("BetterBags: Masque integration enabled.")
+  print("MarnasBag: Masque integration enabled.")
 end
 
 ---@param button Button|ItemButton

@@ -1,6 +1,6 @@
 # Animations Module
 
-This folder contains animation utilities for the BetterBags addon, providing smooth visual transitions for UI elements.
+This folder contains animation utilities for the MarnasBag addon, providing smooth visual transitions for UI elements.
 
 ## Overview
 
@@ -73,6 +73,6 @@ end
 
 ## Integration
 
-This module is integrated as an AceModule within the BetterBags addon framework and can be accessed via:
+This module is integrated as an AceModule within the MarnasBag addon framework and can be accessed via:
 ```lua
 local animations = addon:GetModule('Animations')

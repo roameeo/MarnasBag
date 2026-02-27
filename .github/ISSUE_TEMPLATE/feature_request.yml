@@ -14,7 +14,7 @@ body:
     attributes:
       label: Describe the feature
       description: Please give us a brief overview (1-2 sentences) of what you would like to see added
-      placeholder: I'd really love it if BetterBags would be able to...
+      placeholder: I'd really love it if MarnasBag would be able to...
     validations:
       required: true
   - type: textarea

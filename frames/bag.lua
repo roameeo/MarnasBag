@@ -1,7 +1,7 @@
 ---@diagnostic disable: duplicate-set-field,duplicate-doc-field
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub("AceAddon-3.0"):GetAddon(addonName)
 
 ---@class BagFrame: AceModule
@@ -387,8 +387,8 @@ function bagFrame:Create(ctx, kind)
 
 	local name = kind == const.BAG_KIND.BACKPACK and "Backpack" or "Bank"
 	-- The main display frame for the bag.
-	---@class Frame: BetterBagsBagPortraitTemplate
-	local f = CreateFrame("Frame", "BetterBagsBag" .. name, nil)
+	---@class Frame: MarnasBagBagPortraitTemplate
+	local f = CreateFrame("Frame", "MarnasBagBag" .. name, nil)
 
 	-- Register this window with the theme system.
 	themes:RegisterPortraitWindow(f, name)

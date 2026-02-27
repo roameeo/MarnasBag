@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class SliderFrame: AceModule
@@ -38,11 +38,11 @@ end
 local sliderCount = 0
 function slider:CreateDropdownSlider()
 
-  local f = CreateFrame("Frame", "BetterBagsSliderParent" .. sliderCount)
+  local f = CreateFrame("Frame", "MarnasBagSliderParent" .. sliderCount)
   Mixin(f, UIDropDownCustomMenuEntryMixin)
   f:SetSize(100, 20)
 
-  local s = CreateFrame("Slider", "BetterBagsSlider" .. sliderCount, f, "OptionsSliderTemplate") --[[@as slider]]
+  local s = CreateFrame("Slider", "MarnasBagSlider" .. sliderCount, f, "OptionsSliderTemplate") --[[@as slider]]
   s:SetAllPoints()
   s:SetOrientation("HORIZONTAL")
   s:SetValueStep(1)

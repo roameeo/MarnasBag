@@ -136,7 +136,7 @@ function dropdownButton:GenerateMenu() end
 
 function dropdownButton:Update() end
 
----@class BetterBagsDebugListButton: Button
+---@class MarnasBagDebugListButton: Button
 ---@field RowNumber FontString
 ---@field Category FontString
 ---@field Message FontString
@@ -186,7 +186,7 @@ local SearchBox = {}
 ---@field CloseButton Button
 ---@field TitleContainer TitleContainer
 
----@class BetterBagsBagPortraitTemplate
+---@class MarnasBagBagPortraitTemplate
 ---@field Bg Texture
 ---@field PortraitContainer PortraitContainer
 ---@field CloseButton Button
@@ -196,9 +196,9 @@ local SearchBox = {}
 ---@field TopTileStreaks Texture
 ---@field TitleContainer TitleContainer
 ---@field Owner Bag
-local BetterBagsBagPortraitTemplate = {}
+local MarnasBagBagPortraitTemplate = {}
 ---@return string
-function BetterBagsBagPortraitTemplate:GetName() end
+function MarnasBagBagPortraitTemplate:GetName() end
 
 ---@class PortraitContainer: Frame
 ---@field portrait Texture
@@ -207,13 +207,13 @@ function BetterBagsBagPortraitTemplate:GetName() end
 ---@class TitleContainer: Frame
 ---@field TitleText FontString
 
----@class BetterBagsBagDefaultPanelTemplate
+---@class MarnasBagBagDefaultPanelTemplate
 ---@field Bg Texture
 ---@field CloseButton Button
 ---@field Backdrop BackdropTemplate
 ---@field NineSlice NineSlicePanelTemplate
 ---@field TopTileStreaks Texture
-local BetterBagsBagDefaultPanelTemplate = {}
+local MarnasBagBagDefaultPanelTemplate = {}
 
 ---@class NineSlicePanelTemplate: Frame
 local NineSlicePanelTemplate = {}
@@ -224,16 +224,16 @@ local BackdropTemplate = {}
 function BackdropTemplate:Show() end
 function BackdropTemplate:Hide() end
 
-function BetterBagsBagPortraitTemplate:SetPortraitToAsset(texture) end
-function BetterBagsBagPortraitTemplate:SetPortraitTextureSizeAndOffset(size, offsetX, offsetY) end
-function BetterBagsBagPortraitTemplate:SetTitle(title) end
+function MarnasBagBagPortraitTemplate:SetPortraitToAsset(texture) end
+function MarnasBagBagPortraitTemplate:SetPortraitTextureSizeAndOffset(size, offsetX, offsetY) end
+function MarnasBagBagPortraitTemplate:SetTitle(title) end
 
----@class BetterBagsClassicBagPortrait
+---@class MarnasBagClassicBagPortrait
 ---@field Inset Texture
 ---@field PortraitFrame Texture
 ---@field CloseButton Button
 ---@field SearchBox SearchBox
-local BetterBagsClassicBagPortrait = {}
+local MarnasBagClassicBagPortrait = {}
 
 ---@class FontString
 local FontString = {}

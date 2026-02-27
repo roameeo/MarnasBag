@@ -1,15 +1,13 @@
-## Interface: 50501
+## Interface: 120000, 120001
 
-## Title: BetterBags
-## Notes: Better Bags for everyone!
-## Author: Cidan
-## Version: @project-version@
-## SavedVariables: BetterBagsDB
-## X-Date: @project-date-iso@
+## Title: Marna's Bag
+## Category: Inventory
+## Notes: Personal learning addon based on MarnasBag.
+## Author: Stormy Winters
+## Version: 0.1.0
+## SavedVariablesPerCharacter: MarnasBagDB
 ## X-License: MIT
-## X-Curse-Project-ID: 942432
-## X-Wago-ID: aNDmy96o
-## OptionalDeps: LibStub, Masque, CallbackHandler-1.0, Ace3, LibSharedMedia-3.0, _DebugLog, ConsolePort, Pawn, SortBags, WagoAnalytics, ElvUI
+## OptionalDeps: Masque, ConsolePort, Pawn, WagoAnalytics, GW2_UI, ElvUI, DevTool
 
 libs\LibStub\LibStub.lua
 libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
@@ -26,8 +24,7 @@ libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
 libs\LibUIDropDownMenu\LibUIDropDownMenu.xml
 libs/WagoAnalytics/Shim.lua
 
-templates\era\container.xml
-templates\era\debug.xml
+templates\container.xml
 templates\debug.xml
 
 core\boot.lua
@@ -48,7 +45,6 @@ core\localization.lua
 core\translations.lua
 core\overrides.lua
 core\constants.lua
-core\classic\constants.lua
 core\database.lua
 core\hooks.lua
 core\async.lua
@@ -92,19 +88,15 @@ frames\groupdialog.lua
 frames\search.lua
 frames\slider.lua
 frames\money.lua
-frames\era\money.lua
-frames\classic\contextmenu.lua
+frames\contextmenu.lua
 frames\grid.lua
 frames\item.lua
-frames\era\item.lua
 frames\itemrow.lua
-frames\era\itemrow.lua
 frames\section.lua
 frames\bagbutton.lua
-frames\era\bagbutton.lua
 frames\bagslots.lua
-frames\era\bagslots.lua
-frames\classic\currency.lua
+frames\bankslots.lua
+frames\currency.lua
 frames\list.lua
 frames\themeconfig.lua
 frames\tabs.lua
@@ -117,12 +109,9 @@ views\gridview.lua
 views\bagview.lua
 
 bags\backpack.lua
-bags\classic\backpack.lua
 bags\bank.lua
-bags\classic\bank.lua
 
 frames\bag.lua
-frames\classic\bag.lua
 
 themes\default.lua
 themes\simpledark.lua
@@ -131,7 +120,7 @@ themes\elvui.lua
 
 config\categorypane.lua
 config\themepane.lua
-config\classic\currencypane.lua
+config\currencypane.lua
 config\itemcolorpane.lua
 config\config.lua
 config\plugin.lua
@@ -143,4 +132,3 @@ integrations\simpleitemlevel.lua
 integrations\quickfind.lua
 
 core\init.lua
-core\era\init.lua

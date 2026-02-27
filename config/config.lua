@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Database: AceModule
@@ -42,7 +42,7 @@ local config = addon:NewModule('Config')
 
 function config:CreateConfig()
   local f = form:Create({
-    title = 'BetterBags Settings',
+    title = 'MarnasBag Settings',
     layout = const.FORM_LAYOUT.STACKED,
     index = true,
     tabbed = true
@@ -92,7 +92,7 @@ function config:CreateConfig()
 
  f:AddSection({
    title = 'General',
-   description = 'General settings for BetterBags.',
+   description = 'General settings for MarnasBag.',
  })
   f:AddCheckbox({
    title = 'Enable In-Bag Search',
@@ -133,7 +133,7 @@ function config:CreateConfig()
     end,
     setValue = function(_, value)
       db:SetShowBagButton(value)
-      local sneakyFrame = _G["BetterBagsSneakyFrame"] ---@type Frame
+      local sneakyFrame = _G["MarnasBagSneakyFrame"] ---@type Frame
       if value then
         BagsBar:SetParent(UIParent)
       else
@@ -144,15 +144,15 @@ function config:CreateConfig()
 
   f:AddCheckbox({
     title = 'Enable Bank Bags',
-    description = 'Enable BetterBags for bank. If disabled, the default Blizzard bank UI will be used. Requires a UI reload to take effect.',
+    description = 'Enable MarnasBag for bank. If disabled, the default Blizzard bank UI will be used. Requires a UI reload to take effect.',
     getValue = function(_)
       return db:GetEnableBankBag()
     end,
     setValue = function(_, value)
       db:SetEnableBankBag(value)
       -- Prompt user to reload UI
-      StaticPopupDialogs["BETTERBAGS_RELOAD_UI"] = {
-        text = "BetterBags needs to reload the UI for this change to take effect. Reload now?",
+      StaticPopupDialogs["MARNASBAG_RELOAD_UI"] = {
+        text = "MarnasBag needs to reload the UI for this change to take effect. Reload now?",
         button1 = "Yes",
         button2 = "No",
         OnAccept = function()
@@ -163,7 +163,7 @@ function config:CreateConfig()
         hideOnEscape = true,
         preferredIndex = 3,
       }
-      StaticPopup_Show("BETTERBAGS_RELOAD_UI")
+      StaticPopup_Show("MARNASBAG_RELOAD_UI")
     end
   })
 
@@ -181,7 +181,7 @@ function config:CreateConfig()
   f:AddDropdown({
     title = 'Upgrade Icon Provider',
     description = 'Select the icon provider for item upgrades.',
-    items = {'None', 'BetterBags'},
+    items = {'None', 'MarnasBag'},
     getValue = function(_, value)
       return value == db:GetUpgradeIconProvider()
     end,
@@ -207,7 +207,7 @@ function config:CreateConfig()
 
   f:AddPaneLink({
     title = 'Theme',
-    description = 'Change the visual appearance of BetterBags.',
+    description = 'Change the visual appearance of MarnasBag.',
     createPane = function(parent, _)
       return themePane:Create(parent)
     end,
@@ -332,7 +332,7 @@ function config:CreateConfig()
 
       f:AddCheckbox({
         title = 'Remember Backpack Side Choice',
-        description = 'When enabled, BetterBags remembers whether Side tabs were set to Left or Right. When disabled, Side tabs reset to Right after switching back to Top.',
+        description = 'When enabled, MarnasBag remembers whether Side tabs were set to Left or Right. When disabled, Side tabs reset to Right after switching back to Top.',
         getValue = function(_)
           return db:GetRememberBackpackSidePosition()
         end,
@@ -723,7 +723,7 @@ function config:CreateConfig()
       desc:SetPoint("RIGHT", pane, "RIGHT", -10, 0)
       desc:SetWordWrap(true)
       desc:SetJustifyH("LEFT")
-      desc:SetText("BetterBags integrates with the QuickFind addon to make your items searchable.")
+      desc:SetText("MarnasBag integrates with the QuickFind addon to make your items searchable.")
 
       -- How it works section
       local howItWorksTitle = pane:CreateFontString(nil, "OVERLAY", "GameFontNormal")
@@ -735,7 +735,7 @@ function config:CreateConfig()
       howItWorksText:SetPoint("RIGHT", pane, "RIGHT", -10, 0)
       howItWorksText:SetWordWrap(true)
       howItWorksText:SetJustifyH("LEFT")
-      howItWorksText:SetText("• All items in your backpack and bank are registered as a QuickFind source\n\n• When you press Enter on an item in QuickFind, BetterBags will:\n  - Open the appropriate bag (backpack or bank)\n  - Switch to the tab containing the item\n  - Fill the search box with the item's name\n\n• Items are tagged with their type, category, and location for easy filtering")
+      howItWorksText:SetText("• All items in your backpack and bank are registered as a QuickFind source\n\n• When you press Enter on an item in QuickFind, MarnasBag will:\n  - Open the appropriate bag (backpack or bank)\n  - Switch to the tab containing the item\n  - Fill the search box with the item's name\n\n• Items are tagged with their type, category, and location for easy filtering")
 
       return pane
     end
@@ -761,7 +761,7 @@ function config:CreateConfig()
     end,
     setValue = function(_, value)
       -- Confirmation dialog for profile switch
-      StaticPopupDialogs["BETTERBAGS_SWITCH_PROFILE"] = {
+      StaticPopupDialogs["MARNASBAG_SWITCH_PROFILE"] = {
         text = string.format("Switch to profile '%s'?\n\nThis will reload the UI.", value),
         button1 = "Switch",
         button2 = "Cancel",
@@ -774,7 +774,7 @@ function config:CreateConfig()
         hideOnEscape = true,
         preferredIndex = 3,
       }
-      StaticPopup_Show("BETTERBAGS_SWITCH_PROFILE")
+      StaticPopup_Show("MARNASBAG_SWITCH_PROFILE")
     end
   })
 
@@ -801,7 +801,7 @@ function config:CreateConfig()
       {
         title = 'Create New Profile',
         onClick = function(_)
-          StaticPopupDialogs["BETTERBAGS_CREATE_PROFILE"] = {
+          StaticPopupDialogs["MARNASBAG_CREATE_PROFILE"] = {
             text = "Enter a name for the new profile:",
             button1 = "Create",
             button2 = "Cancel",
@@ -812,7 +812,7 @@ function config:CreateConfig()
               if name and name ~= "" then
                 local success, message = db:CreateProfile(name)
                 if success then
-                  StaticPopupDialogs["BETTERBAGS_PROFILE_CREATED"] = {
+                  StaticPopupDialogs["MARNASBAG_PROFILE_CREATED"] = {
                     text = string.format("Profile '%s' created!\n\nSwitch to it now?", name),
                     button1 = "Switch",
                     button2 = "Later",
@@ -825,9 +825,9 @@ function config:CreateConfig()
                     hideOnEscape = true,
                     preferredIndex = 3,
                   }
-                  StaticPopup_Show("BETTERBAGS_PROFILE_CREATED")
+                  StaticPopup_Show("MARNASBAG_PROFILE_CREATED")
                 else
-                  StaticPopupDialogs["BETTERBAGS_PROFILE_ERROR"] = {
+                  StaticPopupDialogs["MARNASBAG_PROFILE_ERROR"] = {
                     text = message,
                     button1 = "OK",
                     timeout = 0,
@@ -835,7 +835,7 @@ function config:CreateConfig()
                     hideOnEscape = true,
                     preferredIndex = 3,
                   }
-                  StaticPopup_Show("BETTERBAGS_PROFILE_ERROR")
+                  StaticPopup_Show("MARNASBAG_PROFILE_ERROR")
                 end
               end
             end,
@@ -844,14 +844,14 @@ function config:CreateConfig()
             hideOnEscape = true,
             preferredIndex = 3,
           }
-          StaticPopup_Show("BETTERBAGS_CREATE_PROFILE")
+          StaticPopup_Show("MARNASBAG_CREATE_PROFILE")
         end
       },
       {
         title = 'Copy Current Profile',
         onClick = function(_)
           local currentName = db:GetCurrentProfileName()
-          StaticPopupDialogs["BETTERBAGS_COPY_PROFILE"] = {
+          StaticPopupDialogs["MARNASBAG_COPY_PROFILE"] = {
             text = string.format("Create a copy of '%s'?\n\nEnter name for the new profile:", currentName),
             button1 = "Copy",
             button2 = "Cancel",
@@ -866,7 +866,7 @@ function config:CreateConfig()
                   -- Copy data from source profile to new (current) profile
                   local copySuccess, copyMessage = db:CopyFromProfile(currentName)
                   if copySuccess then
-                    StaticPopupDialogs["BETTERBAGS_PROFILE_COPIED"] = {
+                    StaticPopupDialogs["MARNASBAG_PROFILE_COPIED"] = {
                       text = string.format("Profile copied to '%s'.\n\nThe UI will reload now.", name),
                       button1 = "OK",
                       OnAccept = function()
@@ -877,9 +877,9 @@ function config:CreateConfig()
                       hideOnEscape = true,
                       preferredIndex = 3,
                     }
-                    StaticPopup_Show("BETTERBAGS_PROFILE_COPIED")
+                    StaticPopup_Show("MARNASBAG_PROFILE_COPIED")
                   else
-                    StaticPopupDialogs["BETTERBAGS_PROFILE_ERROR"] = {
+                    StaticPopupDialogs["MARNASBAG_PROFILE_ERROR"] = {
                       text = copyMessage,
                       button1 = "OK",
                       timeout = 0,
@@ -887,10 +887,10 @@ function config:CreateConfig()
                       hideOnEscape = true,
                       preferredIndex = 3,
                     }
-                    StaticPopup_Show("BETTERBAGS_PROFILE_ERROR")
+                    StaticPopup_Show("MARNASBAG_PROFILE_ERROR")
                   end
                 else
-                  StaticPopupDialogs["BETTERBAGS_PROFILE_ERROR"] = {
+                  StaticPopupDialogs["MARNASBAG_PROFILE_ERROR"] = {
                     text = message,
                     button1 = "OK",
                     timeout = 0,
@@ -898,7 +898,7 @@ function config:CreateConfig()
                     hideOnEscape = true,
                     preferredIndex = 3,
                   }
-                  StaticPopup_Show("BETTERBAGS_PROFILE_ERROR")
+                  StaticPopup_Show("MARNASBAG_PROFILE_ERROR")
                 end
               end
             end,
@@ -907,7 +907,7 @@ function config:CreateConfig()
             hideOnEscape = true,
             preferredIndex = 3,
           }
-          StaticPopup_Show("BETTERBAGS_COPY_PROFILE")
+          StaticPopup_Show("MARNASBAG_COPY_PROFILE")
         end
       }
     }
@@ -920,7 +920,7 @@ function config:CreateConfig()
         onClick = function(_)
           local current = db:GetCurrentProfileName()
           if current == "Default" then
-            StaticPopupDialogs["BETTERBAGS_PROFILE_ERROR"] = {
+            StaticPopupDialogs["MARNASBAG_PROFILE_ERROR"] = {
               text = "Cannot rename the Default profile.",
               button1 = "OK",
               timeout = 0,
@@ -928,11 +928,11 @@ function config:CreateConfig()
               hideOnEscape = true,
               preferredIndex = 3,
             }
-            StaticPopup_Show("BETTERBAGS_PROFILE_ERROR")
+            StaticPopup_Show("MARNASBAG_PROFILE_ERROR")
             return
           end
 
-          StaticPopupDialogs["BETTERBAGS_RENAME_PROFILE"] = {
+          StaticPopupDialogs["MARNASBAG_RENAME_PROFILE"] = {
             text = string.format("Rename profile '%s' to:", current),
             button1 = "Rename",
             button2 = "Cancel",
@@ -949,7 +949,7 @@ function config:CreateConfig()
                 if success then
                   ReloadUI()
                 else
-                  StaticPopupDialogs["BETTERBAGS_PROFILE_ERROR"] = {
+                  StaticPopupDialogs["MARNASBAG_PROFILE_ERROR"] = {
                     text = message,
                     button1 = "OK",
                     timeout = 0,
@@ -957,7 +957,7 @@ function config:CreateConfig()
                     hideOnEscape = true,
                     preferredIndex = 3,
                   }
-                  StaticPopup_Show("BETTERBAGS_PROFILE_ERROR")
+                  StaticPopup_Show("MARNASBAG_PROFILE_ERROR")
                 end
               end
             end,
@@ -966,7 +966,7 @@ function config:CreateConfig()
             hideOnEscape = true,
             preferredIndex = 3,
           }
-          StaticPopup_Show("BETTERBAGS_RENAME_PROFILE")
+          StaticPopup_Show("MARNASBAG_RENAME_PROFILE")
         end
       },
       {
@@ -974,7 +974,7 @@ function config:CreateConfig()
         onClick = function(_)
           local current = db:GetCurrentProfileName()
           if current == "Default" then
-            StaticPopupDialogs["BETTERBAGS_PROFILE_ERROR"] = {
+            StaticPopupDialogs["MARNASBAG_PROFILE_ERROR"] = {
               text = "Cannot delete the Default profile.",
               button1 = "OK",
               timeout = 0,
@@ -982,11 +982,11 @@ function config:CreateConfig()
               hideOnEscape = true,
               preferredIndex = 3,
             }
-            StaticPopup_Show("BETTERBAGS_PROFILE_ERROR")
+            StaticPopup_Show("MARNASBAG_PROFILE_ERROR")
             return
           end
 
-          StaticPopupDialogs["BETTERBAGS_DELETE_PROFILE"] = {
+          StaticPopupDialogs["MARNASBAG_DELETE_PROFILE"] = {
             text = string.format("Delete profile '%s'?\n\nThis cannot be undone.\n\nYou will be switched to the Default profile.", current),
             button1 = "Delete",
             button2 = "Cancel",
@@ -1000,14 +1000,14 @@ function config:CreateConfig()
             hideOnEscape = true,
             preferredIndex = 3,
           }
-          StaticPopup_Show("BETTERBAGS_DELETE_PROFILE")
+          StaticPopup_Show("MARNASBAG_DELETE_PROFILE")
         end
       },
       {
         title = 'Reset to Defaults',
         onClick = function(_)
           local current = db:GetCurrentProfileName()
-          StaticPopupDialogs["BETTERBAGS_RESET_PROFILE"] = {
+          StaticPopupDialogs["MARNASBAG_RESET_PROFILE"] = {
             text = string.format("Reset profile '%s' to default settings?\n\nThis will delete all your customizations for this profile.\n\nThis cannot be undone.", current),
             button1 = "Reset",
             button2 = "Cancel",
@@ -1020,7 +1020,7 @@ function config:CreateConfig()
             hideOnEscape = true,
             preferredIndex = 3,
           }
-          StaticPopup_Show("BETTERBAGS_RESET_PROFILE")
+          StaticPopup_Show("MARNASBAG_RESET_PROFILE")
         end
       }
     }
@@ -1119,7 +1119,7 @@ function config:CreateConfig()
 
           local importString = config.importTextBox:GetText()
           if not importString or importString == "" then
-            StaticPopupDialogs["BETTERBAGS_IMPORT_ERROR"] = {
+            StaticPopupDialogs["MARNASBAG_IMPORT_ERROR"] = {
               text = "Please paste a category configuration string in the Import Category Configuration field.",
               button1 = "OK",
               timeout = 0,
@@ -1127,19 +1127,19 @@ function config:CreateConfig()
               hideOnEscape = true,
               preferredIndex = 3,
             }
-            StaticPopup_Show("BETTERBAGS_IMPORT_ERROR")
+            StaticPopup_Show("MARNASBAG_IMPORT_ERROR")
             return
           end
 
           -- Confirmation dialog
-          StaticPopupDialogs["BETTERBAGS_IMPORT_CONFIRM"] = {
+          StaticPopupDialogs["MARNASBAG_IMPORT_CONFIRM"] = {
             text = "This will overwrite your current category configuration. Continue?",
             button1 = "Yes",
             button2 = "No",
             OnAccept = function()
               local success, message = db:ImportSettings(importString)
               if success then
-                StaticPopupDialogs["BETTERBAGS_IMPORT_SUCCESS"] = {
+                StaticPopupDialogs["MARNASBAG_IMPORT_SUCCESS"] = {
                   text = "Category configuration imported successfully! Reload UI to apply changes?",
                   button1 = "Reload",
                   button2 = "Later",
@@ -1151,13 +1151,13 @@ function config:CreateConfig()
                   hideOnEscape = true,
                   preferredIndex = 3,
                 }
-                StaticPopup_Show("BETTERBAGS_IMPORT_SUCCESS")
+                StaticPopup_Show("MARNASBAG_IMPORT_SUCCESS")
                 -- Clear the import text box
                 if config.importTextBox then
                   config.importTextBox:SetText("")
                 end
               else
-                StaticPopupDialogs["BETTERBAGS_IMPORT_ERROR"] = {
+                StaticPopupDialogs["MARNASBAG_IMPORT_ERROR"] = {
                   text = "Failed to import category configuration: " .. message,
                   button1 = "OK",
                   timeout = 0,
@@ -1165,7 +1165,7 @@ function config:CreateConfig()
                   hideOnEscape = true,
                   preferredIndex = 3,
                 }
-                StaticPopup_Show("BETTERBAGS_IMPORT_ERROR")
+                StaticPopup_Show("MARNASBAG_IMPORT_ERROR")
               end
             end,
             timeout = 0,
@@ -1173,7 +1173,7 @@ function config:CreateConfig()
             hideOnEscape = true,
             preferredIndex = 3,
           }
-          StaticPopup_Show("BETTERBAGS_IMPORT_CONFIRM")
+          StaticPopup_Show("MARNASBAG_IMPORT_CONFIRM")
         end
       }
     }

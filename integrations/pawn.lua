@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Events: AceModule
@@ -61,5 +61,5 @@ function pawn:OnEnable()
     return
   end
   events:RegisterMessage('bag/Rendered', onBagRendered)
-  print("BetterBags: Pawn integration enabled.")
+  print("MarnasBag: Pawn integration enabled.")
 end

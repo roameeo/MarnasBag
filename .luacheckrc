@@ -15,8 +15,8 @@ ignore = {
 globals = {
 
 	"bit",
-	"BINDING_NAME_BETTERBAGS_TOGGLEBAGS",
-	"BINDING_NAME_BETTERBAGS_TOGGLESEARCH",
+	"BINDING_NAME_MARNASBAG_TOGGLEBAGS",
+	"BINDING_NAME_MARNASBAG_TOGGLESEARCH",
 	"BANK_BAG_PURCHASE",
 	"BaseScrollBoxEvents",
 	"BackdropTemplateMixin",
@@ -26,8 +26,8 @@ globals = {
 	"AccountBankPanel",
 	"BankPanel",
 	"BankPanelMixin",
-	"BetterBags_ToggleBags",
-	"BetterBags_ToggleSearch",
+	"MarnasBag_ToggleBags",
+	"MarnasBag_ToggleSearch",
 	"ButtonInventorySlot",
 	"BreakUpLargeNumbers",
 	"C_AddOns",

@@ -1,6 +1,6 @@
 local addonName = ... ---@type string
 
----@class BetterBags: AceAddon
+---@class MarnasBag: AceAddon
 local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 
 ---@class Constants: AceModule
@@ -980,7 +980,7 @@ function DB:ExportSettings()
   -- Encode to base64
   local encoded = serialization:EncodeBase64(serialized)
 
-  -- Add BetterBags prefix for identification
+  -- Add MarnasBag prefix for identification
   return "!BB" .. encoded
 end
 
@@ -998,7 +998,7 @@ function DB:ImportSettings(dataString)
   -- Remove whitespace
   dataString = dataString:gsub("%s+", "")
 
-  -- Validate and strip BetterBags prefix
+  -- Validate and strip MarnasBag prefix
   if not dataString:match("^!BB") then
     return false, "Invalid import string: Missing !BB prefix. Please make sure you copied the full export string."
   end

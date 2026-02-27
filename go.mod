@@ -1,4 +1,4 @@
-module github.com/Cidan/BetterBags
+module github.com/Cidan/MarnasBag
 
 go 1.23.0
 

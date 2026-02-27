@@ -1,10 +1,10 @@
-## Interface: 20505
+## Interface: 11507
 
-## Title: BetterBags
+## Title: MarnasBag
 ## Notes: Better Bags for everyone!
 ## Author: Cidan
 ## Version: @project-version@
-## SavedVariables: BetterBagsDB
+## SavedVariables: MarnasBagDB
 ## X-Date: @project-date-iso@
 ## X-License: MIT
 ## X-Curse-Project-ID: 942432
